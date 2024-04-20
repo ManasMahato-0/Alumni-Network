@@ -24,7 +24,8 @@
     .topnav{
     overflow: hidden;
           background-color: transparent;
-          height: 70px;
+          height: 80px;
+          z-index: 1;
         }
         
         .topnav a {
@@ -36,6 +37,13 @@
           text-decoration: none;
           font-size: 17px;
         }
+    .scrolled{
+      width:100%;
+    background-color:#7cb4b6;
+    position:fixed;
+    top: 0;
+    left:0;
+    }
         
         /* .topnav a:hover {
           background-color: #ddd;
@@ -447,7 +455,7 @@ button:active {
 .i3-banner{
     height: 100vh;
     width:100%;
-    background-image: linear-gradient(rgba(112, 127, 129, 0.75),rgba(67, 86, 88, 0.75)),url(../static/WhatsApp\ Image\ 2024-04-20\ at\ 5.14.36\ PM.jpeg);
+    background-image: linear-gradient(rgba(112, 127, 129, 0.75),rgba(67, 86, 88, 0.75)),url(../static/group-young-business-people-discussing-600nw-2267487829\ \(2\).jpg);
     background-size: cover;
     background-position: center;
 }
@@ -1672,5 +1680,17 @@ h2:hover::after{
 <div class="six">
 
 </div>
+<script>
+  document.addEventListener('scroll',()=>{
+  const nav = document.querySelector('.topnav');
+  if (window.scrollY> 82){
+    nav.classList.add('scrolled');
+
+  }
+  else{
+    nav.classList.remove('scrolled');
+  }
+  });
+</script>
 </body>
 </html>
