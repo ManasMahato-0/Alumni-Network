@@ -14,9 +14,10 @@
    <div class="home">
     <div class="topnav" id="myTopnav">
           <a href="{{url_for('home')}}" class="mid">HOME</a>
-          <a href="#about" class="mid">ABOUT US</a>
-          <a href="#tools" class="mid">TOOLS</a>
-          <a href="#about" class="end">CONNECT</a>
+          <a href="#second" class="mid">ABOUT US</a>
+          <a href="#about" class="mid">TOOLS</a>
+          <a href="{{url_for('connect')}}" class="end">CONNECT</a>
+
           {%if var==False%}
           <a href="{{url_for('login')}}" class="end start">LOG IN</a>
           {%else %}
@@ -1029,7 +1030,7 @@
             <p>7:00 PM - 9:30 PM IST</p>
             <div class="event-button">
               <button class="evbtn-1"><img src="../static/logo/icons8-bell-24.png" alt=""> <span>Set Remainder</span></button>
-              <button class="evbtn-2">Learn More</button>
+              <button class="evbtn-2">Manage Event</button>
             </div>
 
           </div>
@@ -1049,7 +1050,7 @@
               <p>7:00 PM - 9:30 PM IST</p>
               <div class="event-button">
                 <button class="evbtn-1"><img src="../static/logo/icons8-bell-24.png" alt=""> <span>Set Remainder</span></button>
-                <button class="evbtn-2">Learn More</button>
+                <button class="evbtn-2">Manage Event</button>
               </div>
   
             </div>
@@ -1079,14 +1080,12 @@
       <p>27th April 2024,Saturday</p>
       <p>7:00 PM - 9:30 PM IST</p>
       <div class="event-button">
-        <button class="evbtn-1"><img src="../static/logo/icons8-bell-24.png" alt=""> <span>Set Remainder</span></button>
-        <button class="evbtn-2">Learn More</button>
+        <button class="evbtn-12"><img src="../static/logo/icons8-image-64.png" alt=""> <span>Gallery</span></button>
+        <button class="evbtn-2">Manage Event</button>
       </div>
 
     </div>
-    <div class="event-register">
-      <button><img src="../static/logo/icons8-register-50-removebg-preview.png" alt=""><span>Register</span></button>
-    </div>
+    
     
   </div>
   <hr>
@@ -1099,14 +1098,12 @@
         <p>27th April 2024,Saturday</p>
         <p>7:00 PM - 9:30 PM IST</p>
         <div class="event-button">
-          <button class="evbtn-1"><img src="../static/logo/icons8-bell-24.png" alt=""> <span>Set Remainder</span></button>
-          <button class="evbtn-2">Learn More</button>
+          <button class="evbtn-12"><img src="../static/logo/icons8-image-64.png" alt=""> <span>Gallery</span></button>
+          <button class="evbtn-2">Manage Event</button>
         </div>
 
       </div>
-      <div class="event-register">
-        <button><img src="../static/logo/icons8-register-50-removebg-preview.png" alt=""><span>Register</span></button>
-      </div>
+      
       
       
     </div>

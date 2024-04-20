@@ -125,7 +125,7 @@ def search():
         return render_template('namecard.html',users=matching_users,var=True,name=user_id)
     else:
         return render_template('namecard.html',var=False,name=user_id)
-@app.route('/connect')
+@app.route('/connectbrodcast')
 def brodcast():
     return render_template('brodcast.html')
 @app.route('/sendmail',methods=['GET','POST'])
@@ -135,6 +135,9 @@ def send_mail():
     picture=request.form['pic']
     mail.send_to_mail(email=email,message=message,image_path=r"C:\Users\hgp99\OneDrive\Desktop\HAckathon\8.png")
     return f"<h1>Send email successfully</h1>"
+@app.route('/connect')
+def connect():
+    return render_template('connect.html')
 @app.route('/send/all',methods=['GET','POST'])
 def send_all_mail():
     result = db.session.execute(db.select(User).order_by(User.First_Name))
@@ -153,5 +156,8 @@ def viewprofile():
 @app.route('/mentor')
 def mentor():
     return render_template('Mentorship.html')
+@app.route('/request/mentorship')
+def requestmentor():
+    return render_template('indexRequestMentorship.html')
 if __name__=="__main__":
     app.run(debug=True)
