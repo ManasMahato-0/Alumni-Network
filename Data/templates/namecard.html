@@ -27,7 +27,7 @@
 <button class="button-6" role="button">CONNECT</button>
 
 <!-- HTML !-->
-<button class="button-11" role="button">View full profile</button>
+<a href="{{url_for('viewprofile',id=data.id)}}"><button class="button-11" role="button">View full profile</button></a>
 {%endfor%}
 {%else%}
 <h1>No data found</h1>

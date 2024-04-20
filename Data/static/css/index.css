@@ -92,6 +92,15 @@
           top: 20px;
           color: white;
         }
+        .disname{
+          position: relative;
+          left: 59%;
+          top: 30px;
+          color:#BDB6A8;
+          text-decoration: underline;
+          font-size: 23px;
+          font-style:italic;
+        }
         .start{
           background-color: white;
           color: black;
