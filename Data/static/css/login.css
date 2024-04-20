@@ -1,7 +1,7 @@
 body{
     /* background-color: plum; */
     background-image: url('../LoginImg.jpg');
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: cover;
 }
 .login-container{
