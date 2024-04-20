@@ -14,8 +14,8 @@
    <div class="home">
     <div class="topnav" id="myTopnav">
           <a href="{{url_for('home')}}" class="mid">HOME</a>
-          <a href="#second" class="mid">ABOUT US</a>
-          <a href="#about" class="mid">TOOLS</a>
+          <a href="#about" class="mid">ABOUT US</a>
+          <a href="#tools" class="mid">TOOLS</a>
           <a href="#about" class="end">CONNECT</a>
           {%if var==False%}
           <a href="{{url_for('login')}}" class="end start">LOG IN</a>
@@ -26,7 +26,7 @@
             <i class="fa fa-bars"></i>
           </a>
         </div> 
-        <div class="content">
+        <div class="content" id="home">
            <h1>IIIT RANCHI</h1>
            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus nisi impedit hic praesentium iusto ipsam ut optio, beatae eligendi nihil ab eos? Maiores, quas enim! Dicta autem aspernatur perferendis rem eligendi nesciunt eos inventore. Voluptatem aspernatur fugit alias molestias laborum.</p>
          </div>
@@ -70,7 +70,7 @@
         <div class="about-img">
           <img src="../static/Image1.jpg" alt="">
         </div>
-        <div class="about-about">
+        <div class="about-about" id="about">
           <h2>ABOUT US</h2>
           <h3>All Business Regarding Alumni at one Place..</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda ipsum provident repellat rem natus illum maiores. Ea fugiat iusto magnam corporis et quod adipisci nisi ullam ipsum sed modi, ratione non suscipit libero eaque perspiciatis commodi necessitatibus rem? Quis modi nisi, quam pariatur sunt beatae aliquid possimus suscipit ea laudantium?</p>
@@ -85,7 +85,7 @@
    </div>
 {%if var==True%}
    <form action="{{url_for('search')}}" method="post">
-   <div class="third">
+   <div class="third" id="tools">
     <div class="card-main">
         <div class="card-searchbar">
           <div class="searchBox">
