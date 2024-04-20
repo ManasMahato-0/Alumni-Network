@@ -642,7 +642,7 @@ h2:hover::after{
           <a href="#news" class="mid">HOME</a>
           <a href="#second" class="mid">ABOUT US</a>
           <a href="#about" class="mid">TOOLS</a>
-          <a href="#about" class="end">CONNECT</a>
+          <a href="{{url_for('connect')}}" class="end">CONNECT</a>
           {%if var==False%}
           <a href="{{url_for('login')}}" class="end start">LOG IN</a>
           {%else %}
