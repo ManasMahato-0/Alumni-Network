@@ -2,6 +2,7 @@ from flask import Flask,render_template,request
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 from sqlalchemy import Integer, String, Float,func
+from sqlalchemy.exc import IntegrityError
 from flask import jsonify
 import base64
 from My_Package import email
@@ -23,7 +24,7 @@ class User(db.Model):
     Password:Mapped[str]=mapped_column(String(250),nullable=False)
     Confirm_Password:Mapped[str]=mapped_column(String(250),nullable=False)
     Branch:Mapped[str] = mapped_column(String(250),nullable=False)
-    # Status:Mapped[str] = mapped_column(String(250),nullable=False)
+    Status:Mapped[str] = mapped_column(String(250),nullable=False)
     Current_Company:Mapped[str] = mapped_column(String(250),nullable=False)
     Current_Working_Position:Mapped[str] = mapped_column(String(250),unique=False,nullable=False)
     Image:Mapped[str] = mapped_column(String(100000),nullable=False)
@@ -46,7 +47,7 @@ with app.app_context():
     db.create_all()
 @app.route('/')
 def home():
-    return render_template('index.html',var=False)
+    return render_template('index.html',var=False) 
 @app.route('/login')
 def logs():
     return render_template('index4.html')
@@ -62,7 +63,7 @@ def done():
     email=request.form["email"]
     password=request.form["password"]
     conpassword=request.form["conpassword"]
-    # status=request.form["status"]
+    status=request.form["status"]
     branch=request.form["branch"]
     company=request.form["company"]
     position=request.form["position"]
@@ -71,12 +72,16 @@ def done():
         image_content = file.read()
             # Encode the bytes-like object as a base64 string
         image_64_encode = base64.b64encode(image_content).decode()
-        with app.app_context():
-            new_user = User(First_Name=f"{fname}",Last_Name=f"{lname}",Email=f"{email}",Password=f"{password}",Confirm_Password=f"{conpassword}",Branch=f"{branch}",Current_Company=f"{company}",Current_Working_Position=f"{position}",Image=f"{image_64_encode}")
-        db.session.add(new_user)
-        db.session.commit()
-
-    return render_template('login.html')
+        try:
+            with app.app_context():
+                new_user = User(First_Name=f"{fname}",Last_Name=f"{lname}",Status=f"{status}",Email=f"{email}",Password=f"{password}",Confirm_Password=f"{conpassword}",Branch=f"{branch}",Current_Company=f"{company}",Current_Working_Position=f"{position}",Image=f"{image_64_encode}")
+            db.session.add(new_user)
+            db.session.commit()
+        except IntegrityError:
+            return f"<h1 style='color:red'>Email Unique Consraint failed</h1>"
+        return render_template('login.html')
+    else:
+        return f"<h1 style='color:red'>Password Fields dont match</h1>"
 @app.route('/login/successful',methods=['GET','POST'])
 def loggedin():
     email=request.form["email"]
@@ -91,8 +96,15 @@ def loggedin():
         # firstnames=firstnames+user.First_Name
         if Demail==email and Dpassword==password:
             var=True
-    if var==True:
-        return render_template('index.html',var=True)
+            name=user.First_Name
+            status=user.Status
+    if var==True and status=="Student":
+        return render_template('indexuser.html',var=True,name=name)
+    elif var==True and status=="Admin":
+        return render_template('index.html',var=True,name=name)
+    elif var==True and status=="Alumni":
+        return render_template('indexalumni.html',var=True,name=name)
+    
     else:
         return render_template('login.html')
 @app.route('/about')
@@ -103,7 +115,8 @@ def search():
     user_id = request.form['searchuser'].lower().strip()
 
     # Retrieve users with matching first name (case-insensitive)
-    matching_users = []
+    global matching_users
+    matching_users=[]
     users = User.query.filter(func.lower(User.First_Name) == user_id).all()
     for user in users:
         matching_users.append(user.to_dict())
@@ -113,8 +126,8 @@ def search():
     else:
         return render_template('namecard.html',var=False,name=user_id)
 @app.route('/connect')
-def connect():
-    return render_template('indexSendingInv.html')
+def brodcast():
+    return render_template('brodcast.html')
 @app.route('/sendmail',methods=['GET','POST'])
 def send_mail():
     email=request.form["email"]
@@ -129,5 +142,16 @@ def send_all_mail():
     users=result.scalars()
     mail.send_to_all(message=message,data=users)
     return f"<h1>Send email successfully to all</h1>"
+def get_user_by_id(user_id):
+    for user in matching_users:
+        if user['id'] == user_id:
+            return user
+    return None  # Return None if no user with the specified ID is found
+@app.route('/viewprofile',methods=['GET','POST'])
+def viewprofile():
+    return render_template('profile.html',data=matching_users)
+@app.route('/mentor')
+def mentor():
+    return render_template('Mentorship.html')
 if __name__=="__main__":
     app.run(debug=True)

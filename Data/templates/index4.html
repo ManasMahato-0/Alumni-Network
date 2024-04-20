@@ -133,10 +133,12 @@ input[type="file"] {
   position: relative;
   top: -220px;
   background-color: white;
+  left: -200px;
 }
 .i4-image{
   position: relative;
   top: -220px; 
+  left: -200px;
 }
 h1{
   position: relative;
@@ -160,11 +162,23 @@ h1{
 p{
   color: rgb(0, 0, 0);
   position: relative;
-  top: -110px;
+  top: -150px;
   left: 580px;
 }
 a{
   color: #5c8f9d;
+}
+
+.x{
+  position: relative;
+  top: -310px;
+  left: 220px;
+}
+#x{
+  position: relative;
+  top: -300px;
+  left: 200px;
+  width:280px;
 }
 </style>
 <body>
@@ -186,10 +200,10 @@ a{
         <label for="branch" class="i4-branch">Branch:</label>
         <!-- <input type="branch" id="branch" name="branch" required> -->
         <select name="branch" id="i4-branch">
-          <option value="CSE">CSE</option>
-          <option value="DSA AI">DSA AI</option>
-          <option value="ECE">ECE</option>
-          <option value="ES IOT">ES IOT</option>
+          <option value="Computer Science and Engineering">Computer Science and Engineering</option>
+          <option value="Computer Science and Engineering(DS&AI)">Computer Science and Engineering(DS&AI)</option>
+          <option value="Electronics and Communication Engineering">Electronics and Communication Engineering</option>
+          <option value="Electronics and Communication Engineering(IOT)">Electronics and Communication Engineering(IOT)</option>
         </select>
 
         <label for="company" class="i4-company">Company Name:</label>
@@ -204,12 +218,18 @@ a{
       
         <label for="firm-image" class="i4-image">Upload Your Image</label>
         <input type="file" id="i4-firm-image" name="pic" accept="image/*">
+
+        <label for="branch" class="x">Status:</label>
+        <select name="status" id="x">
+          <option value="Student">Student</option>
+          <option value="Alumni">Alumni</option>
+          <option value="Admin">Admin</option>
+        </select>
       
         <input type="submit" value="SIGN UP" class="i4">
       </form>
     </div>
     <p>Already have an account? <a href="{{url_for('login')}}">Log in</a></p>
-    <p>Copyright © SMHACKERS.com</p>
       <script>
         const inputImage = document.getElementById("i4-firm-image");
 

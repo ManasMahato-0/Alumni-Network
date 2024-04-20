@@ -4,15 +4,642 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="../static/css/index.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/alumni.css">
 </head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    html{
+        scroll-behavior: smooth;
+    }
+    .home{
+        width: 100%;
+        height: 100vh;
+        background-image: url(../static/image.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+    }
+    .disname{
+          position: relative;
+          left: 59%;
+          top: 30px;
+          color:#BDB6A8;
+          text-decoration: underline;
+          font-size: 23px;
+          font-style:italic;
+        }
+    .topnav{
+    overflow: hidden;
+          background-color: transparent;
+          height: 70px;
+        }
+        
+        .topnav a {
+          float: left;
+          display: block;
+          /* color: #f2f2f2; */
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size: 17px;
+        }
+        
+        /* .topnav a:hover {
+          background-color: #ddd;
+          color: black;
+        } */
+        
+        .topnav a.active {
+          background-color: #04AA6D;
+          color: white;
+        }
+        
+        .topnav .icon {
+          display: none;
+        }
+        
+        @media screen and (max-width: 600px) {
+          .topnav a:not(:first-child) {display: none;}
+          .topnav a.icon {
+            float: right;
+            display: block;
+          }
+        }
+        
+        @media screen and (max-width: 600px) {
+          .topnav.responsive {position: relative;}
+          .topnav.responsive .icon {
+            position: absolute;
+            right: 0;
+            top: 0;
+          }
+          .topnav.responsive a {
+            float: none;
+            display: block;
+            text-align: left;
+          }
+        }
+        .logo{
+          width: 280px;
+          height: 70px;
+          position: relative;
+          left: -700px;
+          top: 12px;
+        }
+        .mid{
+          position: relative;
+          left: 53%;
+          top: 20px;
+          color: white;
+          margin-left: 25px;
+        }
+        .end{
+          position: relative;
+          left: 55%;
+          top: 20px;
+          color: white;
+        }
+        .start{
+          background-color: white;
+          color: black;
+          margin-left: 35px;
+        }
+        .content h1{
+            color: white;
+            position: absolute;
+            left: 100px;
+            font-size: 120px;
+            top: 250px;
+        }
+        .content p{
+            position: absolute;
+            top: 400px;
+            width: 500px;
+            left: 100px;
+            color: white;
+            font-size: 20px;
+        }
+
+        .card {
+  width: fit-content;
+  height: fit-content;
+  background-color:transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
+}
+
+.socialContainer {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  background-color:transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition-duration: 0.3s;
+}
+.containerOne:hover {
+  background: #f09433; 
+  background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+  background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+  transition-duration: 0.3s;
+}
+.containerTwo:hover {
+  background-color: #00acee;
+  transition-duration: 0.3s;
+}
+.containerThree:hover {
+  background-color: #0072b1;
+  transition-duration: 0.3s;
+}
+.containerFour:hover {
+  background-color: green;
+  transition-duration: 0.3s;
+}
+
+.socialContainer:active {
+  transform: scale(0.9);
+  transition-duration: 0.3s;
+}
+
+.socialSvg {
+  width: 17px;
+}
+
+.socialSvg path {
+  fill: rgb(255, 255, 255);
+}
+
+.socialContainer:hover .socialSvg {
+  animation: slide-in-top 0.3s both;
+}
+.third{
+    width: 100%;
+    height: 100vh;
+    background-color: red;
+}
+
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.social{
+  display: flex;
+  width: 25%;
+  justify-content:space-evenly;
+  align-items: center;
+  position: relative;
+}
+.cardx{
+    position: relative;
+    width: 20px;
+    top: 500px;
+
+}
+.second{
+    background-color: green;
+    width: 100%;
+    height: 100vh;
+}
+.card-main{
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  background-color: #717d8d;
+  height: 100vh;
+  width: 100%;
+  
+  
+}
+
+.searchBox {
+  display: flex;
+  max-width: 600px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background: #f7eedd;
+  border-radius: 50px;
+  position: relative;
+  margin-top: 20px;
+}
+
+.searchButton {
+  color: white;
+  position: absolute;
+  right: 8px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background:#403421;
+  border: 0;
+  display: inline-block;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  margin-top: 0px;
+}
+
+button:hover {
+  color: #fff;
+  background-color: #1A1A1A;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 10px 20px;
+  transform: translateY(-3px);
+}
+
+button:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+.searchInput {
+  border: none;
+  background: none;
+  outline: none;
+  color: #403421;
+  font-size: 15px;
+  padding: 24px 46px 24px 26px;
+}
+
+
+.card-top-alumni{
+  display: flex;
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.card {
+  --main-color: #000;
+  --submain-color: #78858f;
+  --bg-color: #f4f4f4;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  position: relative;
+  width: 300px;
+  height: 384px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  background: var(--bg-color);
+  height: 425px;
+  
+}
+
+.card__img {
+  height: 192px;
+  width: 100%;
+}
+
+.card__img svg {
+  height: 100%;
+  border-radius: 20px 20px 0 0;
+}
+
+.card__avatar {
+  position: absolute;
+  width: 114px;
+  height: 114px;
+  background: var(--bg-color);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: calc(50% - 57px);
+}
+
+.card__avatar svg {
+  width: 100px;
+  height: 100px;
+}
+
+.card__title {
+  margin-top: 60px;
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--main-color);
+}
+
+.card__subtitle {
+  margin-top: 10px;
+  font-weight: 400;
+  font-size: 15px;
+  color: var(--submain-color);
+}
+
+.card__btn {
+  margin-top: 15px;
+  width: 76px;
+  height: 31px;
+  border: 2px solid #BDB6A8;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 11px;
+  color: #BDB6A8;
+  background: var(--bg-color);
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+
+
+.card__btn-solid {
+  background: #BDB6A8;
+  color: var(--bg-color);
+}
+
+.card__btn:hover {
+  background: #BDB6A8;
+  color: var(--bg-color);
+}
+
+.card__btn-solid:hover {
+  background: var(--bg-color);
+  color: #BDB6A8;
+}
+.card__wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.card1{
+  margin-left: 30px;
+}
+.card2{
+  margin-left: 30px;
+}
+.card3{
+  margin-left: 30px;
+}
+.card4{
+  margin-left: 30px;
+}
+.four{
+    width: 100%;
+    height: 100vh;
+    background-color:#717d8d ;
+}
+.searchBox2 {
+  display: flex;
+  max-width: 600px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background: #f7eedd;
+  border-radius: 50px;
+  position: relative;
+  margin-top: 10px;
+  top: 20px;
+}
+
+.searchButton2 {
+  color: white;
+  position: absolute;
+  right: 8px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background:#403421;
+  border: 0;
+  display: inline-block;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+  margin-top: 0;
+}
+
+button:hover {
+  color: #fff;
+  background-color: #1A1A1A;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 10px 20px;
+  transform: translateY(-3px);
+}
+
+button:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+.searchInput2 {
+  border: none;
+  background: none;
+  outline: none;
+  color: white;
+  font-size: 15px;
+  padding: 24px 46px 24px 26px;
+}
+
+.five{
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    position: relative;
+    top: 700px;
+}
+.i3-banner2{
+    height: 400px;
+    background-color:white;
+    width: 100%;
+     position:absolute;
+     bottom: 0px;
+}
+.i3-banner{
+    height: 100vh;
+    width:100%;
+    background-image: linear-gradient(rgba(112, 127, 129, 0.75),rgba(67, 86, 88, 0.75)),url(../static/WhatsApp\ Image\ 2024-04-20\ at\ 5.14.36\ PM.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+
+.i3-element1{
+    position: absolute;
+    top: 70px;
+    left: 100px;
+}
+
+.i3-element2{
+    position: absolute;
+    top: 70px;
+    left: 650px;
+}
+    
+
+.i3-element3{
+    position: absolute;
+    top: 70px;
+    left: 1200px;
+
+}
+
+.i3-element11{
+    position: absolute;
+    top:280px;
+    left:100px;
+    
+}
+
+.i3-element22{
+    position: absolute;
+    top:280px;
+    left:612px;
+    
+}
+
+.i3-element33{
+    position: absolute;
+    top:280px;
+    left:1152px;
+    
+}
+.i3-container{
+    color: white;
+    position: absolute;
+    top:100px;
+    left:200px;
+   
+}
+
+
+.i3-button{
+    position: relative;
+    margin-top: 100px;
+    width:400px;
+    padding-bottom: 5px;
+    text-align: center;
+   border-radius: 10px;
+    background:rgb(6, 143, 241);;
+    color:white;
+    font-weight: 700;
+    margin-right: 50px;
+    margin-left: 20px;
+    height:50px;
+    border:transparent;
+    z-index: 1;
+    cursor: pointer;
+    top: -10px;
+    
+}
+  
+ 
+
+.i3-container2{
+    display: inline;
+}
+.six{
+    width: 100%;
+    height: 1500px;
+    background-color: #000;
+}
+.about-container{
+  height: 100vh;
+  width:100%;
+  background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("../static/Image1.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  
+}
+
+.about-img{
+  width: 30%;
+  height: 80%;
+  padding: 50px;
+
+}
+.about-img img{
+  height: 100%;
+  width: 100%;
+}
+.about-about{
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  color: #f7eedd;
+  font-size: 24px;
+  gap: 20px;
+
+}
+
+.about-button{
+  position: relative;
+  margin-top: 40px;
+  width:300px;
+  padding: 2px;
+  text-align: center;
+  border-radius: 50px;
+  background:transparent;
+  color:#f7eedd;
+  font-weight: 700;
+  margin-right: 50px;
+  margin-left: 20px;
+  height:50px;
+  border:2px solid  #f7eedd;
+  z-index: 1;
+  cursor: pointer;
+  display: inline;
+}
+
+.about-button span{
+  position: absolute;
+  height:100%;
+  width:0;
+  background: #7d643b;
+  left:0;
+  bottom:0;
+  border-radius: 50px;
+  z-index: -1;
+  transition: 0.5s;
+}
+
+.about-button:hover span{
+  width: 100%;
+}
+.about-btn{
+  display: flex;
+  gap: 10px;
+}
+h2{
+  display: inline-block;
+  margin: 0 0;
+  position:relative;
+  cursor: pointer;
+}
+h2::after{
+  position:absolute;
+    width: 0;
+    height: 100%;
+    content:'';
+    border:3px solid #f7eedd;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+    bottom:-2px;
+    left:0;
+    
+    transition: 0.5s;
+}
+h2:hover::after{
+  width: 30%;
+}
+</style>
 <body>
    <div class="home">
     <div class="topnav" id="myTopnav">
-          <a href="{{url_for('home')}}" class="mid">HOME</a>
+          <a href="#news" class="mid">HOME</a>
           <a href="#second" class="mid">ABOUT US</a>
           <a href="#about" class="mid">TOOLS</a>
           <a href="#about" class="end">CONNECT</a>
@@ -82,16 +709,14 @@
     
       </div>
    </div>
-{%if var==True%}
-   <form action="{{url_for('search')}}" method="post">
    <div class="third">
     <div class="card-main">
         <div class="card-searchbar">
           <div class="searchBox">
       
-            <input class="searchInput" type="text" name="searchuser" placeholder="Search something">
-            <button class="searchButton" type="submit">
-                 
+            <input class="searchInput" type="text" name="" placeholder="Search something">
+            <button class="searchButton" href="#">
+                   
                   
       
                                 <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29" fill="none">
@@ -121,8 +746,9 @@
             </button>
         </div>
       
+      
+        
         </div>
-      </form>
         <div class="card-top-alumni">
           <div class="card1">
             <div class="card">
@@ -984,9 +1610,9 @@
       </div>
    </div>
    <div class="four">
-    <div class="event-box">
-        
-      <div class="card-searchbar2">
+    <div class="event-box2">
+        <div id="event-gradient"></div>
+        <div class="card-searchbar2">
             <div class="searchBox2">
         
               <input class="searchInput2" type="text" name="" placeholder="Search for event">
@@ -994,7 +1620,7 @@
                      
                     
         
-            <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29" fill="none">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29" fill="none">
         <g clip-path="url(#clip0_2_17)">
         <g filter="url(#filter0_d_2_17)">
         <path d="M23.7953 23.9182L19.0585 19.1814M19.0585 19.1814C19.8188 18.4211 20.4219 17.5185 20.8333 16.5251C21.2448 15.5318 21.4566 14.4671 21.4566 13.3919C21.4566 12.3167 21.2448 11.252 20.8333 10.2587C20.4219 9.2653 19.8188 8.36271 19.0585 7.60242C18.2982 6.84214 17.3956 6.23905 16.4022 5.82759C15.4089 5.41612 14.3442 5.20435 13.269 5.20435C12.1938 5.20435 11.1291 5.41612 10.1358 5.82759C9.1424 6.23905 8.23981 6.84214 7.47953 7.60242C5.94407 9.13789 5.08145 11.2204 5.08145 13.3919C5.08145 15.5634 5.94407 17.6459 7.47953 19.1814C9.01499 20.7168 11.0975 21.5794 13.269 21.5794C15.4405 21.5794 17.523 20.7168 19.0585 19.1814Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" shape-rendering="crispEdges"></path>
@@ -1019,162 +1645,51 @@
               </button>
           </div>
        
-      </div>
-      <div class="upcoming-event">
-        <h1>Upcoming Events</h1>
-        <div class="event1 event">
-          <img src="../static/logo/preview-page0.jpg" alt="">
-          <div class="event-info">
-            <h3>Event Name</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima voluptatem quis eos veritatis natus quia et nisi ducimus vel enim!</p>
-            <p>27th April 2024,Saturday</p>
-            <p>7:00 PM - 9:30 PM IST</p>
-            <div class="event-button">
-              <button class="evbtn-1"><img src="../static/logo/icons8-bell-24.png" alt=""> <span>Set Remainder</span></button>
-              <button class="evbtn-2">Learn More</button>
-            </div>
-
-          </div>
-          <div class="event-register">
-            <button><img src="../static/logo/icons8-register-50-removebg-preview.png" alt=""><span>Register</span></button>
-          </div>
-          
-        </div>
-        <hr>
-        <div class="event2 event">
-          <div class="event1 event">
-            <img src="../static/logo/preview-abstract-corporate-live-webinar-poster-vector-template-1645627668.jpg" alt="">
-            <div class="event-info">
-              <h3>Event Name</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima voluptatem quis eos veritatis natus quia et nisi ducimus vel enim!</p>
-              <p>27th April 2024,Saturday</p>
-              <p>7:00 PM - 9:30 PM IST</p>
-              <div class="event-button">
-                <button class="evbtn-1"><img src="../static/logo/icons8-bell-24.png" alt=""> <span>Set Remainder</span></button>
-                <button class="evbtn-2">Learn More</button>
-              </div>
-  
-            </div>
-            <div class="event-register">
-              <button><img src="../static/logo/icons8-register-50-removebg-preview.png" alt=""><span>Register</span></button>
-            </div>
-            
-            
-          </div>
-        </div>
-        <hr>
-      </div>
-      <div class="See-more">
-        <button><span>See More</span><img src="../static/logo/icons8-down-50.png" alt=""></button>
-      </div>
-    </div>
-  </div>
-  <div class="four2">
-    
-<div class="past-event">
-  <h1>Past Events</h1>
-  <div class="event1 event">
-    <img src="../static/logo/preview-page0.jpg" alt="">
-    <div class="event-info">
-      <h3>Event Name</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima voluptatem quis eos veritatis natus quia et nisi ducimus vel enim!</p>
-      <p>27th April 2024,Saturday</p>
-      <p>7:00 PM - 9:30 PM IST</p>
-      <div class="event-button">
-        <button class="evbtn-1"><img src="../static/logo/icons8-bell-24.png" alt=""> <span>Set Remainder</span></button>
-        <button class="evbtn-2">Learn More</button>
-      </div>
-
-    </div>
-    <div class="event-register">
-      <button><img src="../static/logo/icons8-register-50-removebg-preview.png" alt=""><span>Register</span></button>
-    </div>
-    
-  </div>
-  <hr>
-  <div class="event2 event">
-    <div class="event1 event">
-      <img src="../static/logo/preview-abstract-corporate-live-webinar-poster-vector-template-1645627668.jpg" alt="">
-      <div class="event-info">
-        <h3>Event Name</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima voluptatem quis eos veritatis natus quia et nisi ducimus vel enim!</p>
-        <p>27th April 2024,Saturday</p>
-        <p>7:00 PM - 9:30 PM IST</p>
-        <div class="event-button">
-          <button class="evbtn-1"><img src="../static/logo/icons8-bell-24.png" alt=""> <span>Set Remainder</span></button>
-          <button class="evbtn-2">Learn More</button>
-        </div>
-
-      </div>
-      <div class="event-register">
-        <button><img src="../static/logo/icons8-register-50-removebg-preview.png" alt=""><span>Register</span></button>
-      </div>
-      
-      
-    </div>
-  </div>
-  <hr>
-</div>
-<div class="See-more">
-  <button><span>See More</span><img src="../static/logo/icons8-down-50.png" alt=""></button>
-</div>
-  </div>
-  <div class="five">
-    <div class="i3-banner">
-
-        <div class="i3-container">
-            <h1>Connectivity at One Place</h1>
-            <p><h2>Invite,Update,Inform alumni with single click</h2></p>
-
-            <a href="{{url_for('brodcast')}}"><button type="button" class="i3-button"><span></span><div class="i3-conatiner2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-broadcast-pin" viewBox="0 0 16 16">
-
-                <path d="M3.05 3.05a7 7 0 0 0 0 9.9.5.5 0 0 1-.707.707 8 8 0 0 1 0-11.314.5.5 0 0 1 .707.707m2.122 2.122a4 4 0 0 0 0 5.656.5.5 0 1 1-.708.708 5 5 0 0 1 0-7.072.5.5 0 0 1 .708.708m5.656-.708a.5.5 0 0 1 .708 0 5 5 0 0 1 0 7.072.5.5 0 1 1-.708-.708 4 4 0 0 0 0-5.656.5.5 0 0 1 0-.708m2.122-2.12a.5.5 0 0 1 .707 0 8 8 0 0 1 0 11.313.5.5 0 0 1-.707-.707 7 7 0 0 0 0-9.9.5.5 0 0 1 0-.707zM6 8a2 2 0 1 1 2.5 1.937V15.5a.5.5 0 0 1-1 0V9.937A2 2 0 0 1 6 8"/>
-              </svg></div>BROADCAST MESSAGE</button></a>
-        </div>
-
+   </div>
+<div class="five">
+    <div class="banner">
+        <div class="navbar1">
+       <div class="feature1"><h6><a href=""  class="linktag">VIEW MEMBERS</a</h6></div>
+           <div class="feature2"><h6><a href=""  class="linktag">POST JOBS</a</h6></div>
         
-     <div class="i3-banner2">
-        <div class="i3-element11"><h1>Send Invites</h1></div>
-        <div class="i3-element1">
-            <svg xmlns="http://www.w3.org/2000/svg" width="200" height="" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
-                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
-              </svg>
-          </svg></div>
+        </div>
+   <div class="container">
+       <h1><div class="head"> Alumni Mentorship Programme</div></h1>
+       <p><div class="head2"><h3>Give tips, advices and guidance throughout your journey to build a successful career of members</h3></div></p>
+      
+   </div>
+            
+   <div class="banner2">
+   <div class="element11"><h1><a  class="linktag" href="{{url_for('mentor')}}">Offer Mentorship</a></h1></div>
+   <div class="element1">
+       <svg xmlns="http://www.w3.org/2000/svg" width="200" height="" fill="currentColor" class="bi bi-person-raised-hand" viewBox="0 0 16 16">
+           <path d="M6 6.207v9.043a.75.75 0 0 0 1.5 0V10.5a.5.5 0 0 1 1 0v4.75a.75.75 0 0 0 1.5 0v-8.5a.25.25 0 1 1 .5 0v2.5a.75.75 0 0 0 1.5 0V6.5a3 3 0 0 0-3-3H6.236a1 1 0 0 1-.447-.106l-.33-.165A.83.83 0 0 1 5 2.488V.75a.75.75 0 0 0-1.5 0v2.083c0 .715.404 1.37 1.044 1.689L5.5 5c.32.32.5.754.5 1.207"/>
+           <path d="M8 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/>
+         </svg>
+   </div>
 
-          <div class="i3-element22"><h1>Send Updates</h1></div>
-          <div class="i3-element2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="200" height="" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"/>
-                <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"/>
-              </svg>
-          </div>
 
 
-          <div class="i3-element33"><h1>Send Newsletters</h1></div>
-          <div class="i3-element3">
-            <svg xmlns="http://www.w3.org/2000/svg" width="200" height="" fill="currentColor" class="bi bi-file-text" viewBox="0 0 16 16">
-                <path d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5M5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1z"/>
-                <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1"/>
-              </svg>
-          </div>
+     <div class="element22"><h1><a href="" class="linktag">Event Updates</a></h1></div>
+     <div class="element2">
+       <svg xmlns="http://www.w3.org/2000/svg" width="200" height="" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+           <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"/>
+           <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"/>
+         </svg>
+     </div>
+
+
+     <div class="element33"><h1><a class="linktag" href="">Job Updates</a></h1></div>
+     <div class="element3">
+       <svg xmlns="http://www.w3.org/2000/svg" width="200" height="" fill="currentColor" class="bi bi-person-workspace" viewBox="0 0 16 16">
+           <path d="M4 16s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-5.95a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/>
+           <path d="M2 1a2 2 0 0 0-2 2v9.5A1.5 1.5 0 0 0 1.5 14h.653a5.4 5.4 0 0 1 1.066-2H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v9h-2.219c.554.654.89 1.373 1.066 2h.653a1.5 1.5 0 0 0 1.5-1.5V3a2 2 0 0 0-2-2z"/>
+         </svg>
      </div>
 </div>
-</div>
+</div> 
+<div>
 <div class="six">
-
 </div>
-<script>
-  document.addEventListener('scroll',()=>{
-  const nav = document.querySelector('.topnav');
-  if (window.scrollY> 82){
-    nav.classList.add('scrolled');
-
-  }
-  else{
-    nav.classList.remove('scrolled');
-  }
-  });
-</script>
-{%endif%}
 </body>
 </html>
