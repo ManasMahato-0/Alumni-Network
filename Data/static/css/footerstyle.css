@@ -1,14 +1,16 @@
 *{
     font-family: sans-serif;
 }
-.container{
+.footer-container{
     position:absolute;
     bottom:0px;
     width:100%;
-    height: 50%;
+    height: 45%;
+    left: 0px;
+    top: 4600px;
 }
 
-.card {
+.footer-card {
     width: fit-content;
     height: fit-content;
     background-color:transparent;
@@ -19,7 +21,7 @@
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
   }
   
-  .socialContainer {
+  .footer-socialContainer {
     width: 40px;
     height: 40px;
     border-radius: 5px;
@@ -30,7 +32,7 @@
     overflow: hidden;
     transition-duration: 0.3s;
   }
-  .containerOne:hover {
+  .footer-containerOne:hover {
     background: #f09433; 
     background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
     background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
@@ -38,33 +40,33 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
     transition-duration: 0.3s;
   }
-  .containerTwo:hover {
+  .footer-containerTwo:hover {
     background-color: #00acee;
     transition-duration: 0.3s;
   }
-  .containerThree:hover {
+  .footer-containerThree:hover {
     background-color: #0072b1;
     transition-duration: 0.3s;
   }
-  .containerFour:hover {
+  .footer-containerFour:hover {
     background-color: green;
     transition-duration: 0.3s;
   }
   
-  .socialContainer:active {
+  .footer-socialContainer:active {
     transform: scale(0.9);
     transition-duration: 0.3s;
   }
   
-  .socialSvg {
+  .footer-socialSvg {
     width: 17px;
   }
   
-  .socialSvg path {
+  .footer-socialSvg path {
     fill: rgb(255, 255, 255);
   }
   
-  .socialContainer:hover .socialSvg {
+  .footer-socialContainer:hover .socialSvg {
     animation: slide-in-top 0.3s both;
   }
   
@@ -80,25 +82,25 @@
     }
   }
   
-  .social{
+  .footer-social{
     display: flex;
     width: 25%;
     justify-content:space-evenly;
     align-items: center;
   }
 
-  .container{
+  .footer-container{
     background-color: black;
     color: aliceblue;
   }
 
-  li{
+ li{
     list-style: none;
     margin-top: 20px;
     margin-top: 20px;
   }
 
-  .section1{
+  .footer-section1{
   position: absolute;
   top:200px;
   left:100px;
@@ -106,7 +108,7 @@
 
   }
 
-  .section2{
+  .footer-section2{
 position: absolute;
 top:100px;
 left:600px;
@@ -114,25 +116,25 @@ height:400px
   }
 
 
-  .section3{
+  .footer-section3{
     position: absolute;
     top:100px;
     left:1000px
   }
 
 
-  .heading{
+  .footer-heading{
     position: absolute;
     left:40px;
     top:-50px
   }
 
 
-  li a{
+   li a{
     text-decoration: none;
     color: white;
   }
 
-  li a:hover{
+  .footer-section3 li a:hover{
     color:#0072b1
   }
