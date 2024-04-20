@@ -170,7 +170,7 @@ a{
 <body>
   <div class="i4-box">
     <h1>SIGN UP</h1>
-    <form action="{{url_for('done')}}" method="post">
+    <form action="{{url_for('done')}}" method="post" enctype="multipart/form-data">
         <label for="name" class="i4-name">First Name:</label>
         <input type="text" id="i4-name" name="firstname" required>
       
@@ -208,7 +208,7 @@ a{
         <input type="submit" value="SIGN UP" class="i4">
       </form>
     </div>
-    <p>Already have an account? <a href="./index.html">Log in</a></p>
+    <p>Already have an account? <a href="{{url_for('login')}}">Log in</a></p>
     <p>Copyright © SMHACKERS.com</p>
       <script>
         const inputImage = document.getElementById("i4-firm-image");
