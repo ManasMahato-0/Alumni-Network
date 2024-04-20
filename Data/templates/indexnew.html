@@ -1,0 +1,1676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    html{
+        scroll-behavior: smooth;
+    }
+    .home{
+        width: 100%;
+        height: 100vh;
+        background-image: url(../static/image.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+    }
+    .topnav{
+    overflow: hidden;
+          background-color: transparent;
+          height: 70px;
+        }
+        
+        .topnav a {
+          float: left;
+          display: block;
+          /* color: #f2f2f2; */
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size: 17px;
+        }
+        
+        /* .topnav a:hover {
+          background-color: #ddd;
+          color: black;
+        } */
+        
+        .topnav a.active {
+          background-color: #04AA6D;
+          color: white;
+        }
+        
+        .topnav .icon {
+          display: none;
+        }
+        
+        @media screen and (max-width: 600px) {
+          .topnav a:not(:first-child) {display: none;}
+          .topnav a.icon {
+            float: right;
+            display: block;
+          }
+        }
+        
+        @media screen and (max-width: 600px) {
+          .topnav.responsive {position: relative;}
+          .topnav.responsive .icon {
+            position: absolute;
+            right: 0;
+            top: 0;
+          }
+          .topnav.responsive a {
+            float: none;
+            display: block;
+            text-align: left;
+          }
+        }
+        .logo{
+          width: 280px;
+          height: 70px;
+          position: relative;
+          left: -700px;
+          top: 12px;
+        }
+        .mid{
+          position: relative;
+          left: 53%;
+          top: 20px;
+          color: white;
+          margin-left: 25px;
+        }
+        .end{
+          position: relative;
+          left: 55%;
+          top: 20px;
+          color: white;
+        }
+        .start{
+          background-color: white;
+          color: black;
+          margin-left: 35px;
+        }
+        .content h1{
+            color: white;
+            position: absolute;
+            left: 100px;
+            font-size: 120px;
+            top: 250px;
+        }
+        .content p{
+            position: absolute;
+            top: 400px;
+            width: 500px;
+            left: 100px;
+            color: white;
+            font-size: 20px;
+        }
+
+        .card {
+  width: fit-content;
+  height: fit-content;
+  background-color:transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
+}
+
+.socialContainer {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  background-color:transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition-duration: 0.3s;
+}
+.containerOne:hover {
+  background: #f09433; 
+  background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+  background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+  transition-duration: 0.3s;
+}
+.containerTwo:hover {
+  background-color: #00acee;
+  transition-duration: 0.3s;
+}
+.containerThree:hover {
+  background-color: #0072b1;
+  transition-duration: 0.3s;
+}
+.containerFour:hover {
+  background-color: green;
+  transition-duration: 0.3s;
+}
+
+.socialContainer:active {
+  transform: scale(0.9);
+  transition-duration: 0.3s;
+}
+
+.socialSvg {
+  width: 17px;
+}
+
+.socialSvg path {
+  fill: rgb(255, 255, 255);
+}
+
+.socialContainer:hover .socialSvg {
+  animation: slide-in-top 0.3s both;
+}
+.third{
+    width: 100%;
+    height: 100vh;
+    background-color: red;
+}
+
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.social{
+  display: flex;
+  width: 25%;
+  justify-content:space-evenly;
+  align-items: center;
+  position: relative;
+}
+.cardx{
+    position: relative;
+    width: 20px;
+    top: 500px;
+
+}
+.second{
+    background-color: green;
+    width: 100%;
+    height: 100vh;
+}
+.card-main{
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  background-color: #717d8d;
+  height: 100vh;
+  width: 100%;
+  
+  
+}
+
+.searchBox {
+  display: flex;
+  max-width: 600px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background: #f7eedd;
+  border-radius: 50px;
+  position: relative;
+  margin-top: 20px;
+}
+
+.searchButton {
+  color: white;
+  position: absolute;
+  right: 8px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background:#403421;
+  border: 0;
+  display: inline-block;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+}
+
+button:hover {
+  color: #fff;
+  background-color: #1A1A1A;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 10px 20px;
+  transform: translateY(-3px);
+}
+
+button:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+.searchInput {
+  border: none;
+  background: none;
+  outline: none;
+  color: #403421;
+  font-size: 15px;
+  padding: 24px 46px 24px 26px;
+}
+
+
+.card-top-alumni{
+  display: flex;
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.card {
+  --main-color: #000;
+  --submain-color: #78858f;
+  --bg-color: #f4f4f4;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  position: relative;
+  width: 300px;
+  height: 384px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  background: var(--bg-color);
+  height: 425px;
+  
+}
+
+.card__img {
+  height: 192px;
+  width: 100%;
+}
+
+.card__img svg {
+  height: 100%;
+  border-radius: 20px 20px 0 0;
+}
+
+.card__avatar {
+  position: absolute;
+  width: 114px;
+  height: 114px;
+  background: var(--bg-color);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: calc(50% - 57px);
+}
+
+.card__avatar svg {
+  width: 100px;
+  height: 100px;
+}
+
+.card__title {
+  margin-top: 60px;
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--main-color);
+}
+
+.card__subtitle {
+  margin-top: 10px;
+  font-weight: 400;
+  font-size: 15px;
+  color: var(--submain-color);
+}
+
+.card__btn {
+  margin-top: 15px;
+  width: 76px;
+  height: 31px;
+  border: 2px solid #BDB6A8;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 11px;
+  color: #BDB6A8;
+  background: var(--bg-color);
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+
+
+.card__btn-solid {
+  background: #BDB6A8;
+  color: var(--bg-color);
+}
+
+.card__btn:hover {
+  background: #BDB6A8;
+  color: var(--bg-color);
+}
+
+.card__btn-solid:hover {
+  background: var(--bg-color);
+  color: #BDB6A8;
+}
+.card__wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.card1{
+  margin-left: 30px;
+}
+.card2{
+  margin-left: 30px;
+}
+.card3{
+  margin-left: 30px;
+}
+.card4{
+  margin-left: 30px;
+}
+.four{
+    width: 100%;
+    height: 100vh;
+    background-color:#717d8d ;
+}
+.searchBox2 {
+  display: flex;
+  max-width: 600px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  background: #f7eedd;
+  border-radius: 50px;
+  position: relative;
+  margin-top: 10px;
+  top: 20px;
+}
+
+.searchButton2 {
+  color: white;
+  position: absolute;
+  right: 8px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background:#403421;
+  border: 0;
+  display: inline-block;
+  transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+}
+
+button:hover {
+  color: #fff;
+  background-color: #1A1A1A;
+  box-shadow: rgba(0, 0, 0, 0.5) 0 10px 20px;
+  transform: translateY(-3px);
+}
+
+button:active {
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+.searchInput2 {
+  border: none;
+  background: none;
+  outline: none;
+  color: white;
+  font-size: 15px;
+  padding: 24px 46px 24px 26px;
+}
+
+.five{
+    width: 100%;
+    height: 100vh;
+    background-color: #000;
+    position: relative;
+    top: 700px;
+}
+.i3-banner2{
+    height: 400px;
+    background-color:white;
+    width: 100%;
+     position:absolute;
+     bottom: 0px;
+}
+.i3-banner{
+    height: 100vh;
+    width:100%;
+    background-image: linear-gradient(rgba(112, 127, 129, 0.75),rgba(67, 86, 88, 0.75)),url(../static/WhatsApp\ Image\ 2024-04-20\ at\ 5.14.36\ PM.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+
+.i3-element1{
+    position: absolute;
+    top: 70px;
+    left: 100px;
+}
+
+.i3-element2{
+    position: absolute;
+    top: 70px;
+    left: 650px;
+}
+    
+
+.i3-element3{
+    position: absolute;
+    top: 70px;
+    left: 1200px;
+
+}
+
+.i3-element11{
+    position: absolute;
+    top:280px;
+    left:100px;
+    
+}
+
+.i3-element22{
+    position: absolute;
+    top:280px;
+    left:612px;
+    
+}
+
+.i3-element33{
+    position: absolute;
+    top:280px;
+    left:1152px;
+    
+}
+.i3-container{
+    color: white;
+    position: absolute;
+    top:100px;
+    left:200px;
+   
+}
+
+
+.i3-button{
+    position: relative;
+    margin-top: 100px;
+    width:400px;
+    padding-bottom: 5px;
+    text-align: center;
+   border-radius: 10px;
+    background:rgb(6, 143, 241);;
+    color:white;
+    font-weight: 700;
+    margin-right: 50px;
+    margin-left: 20px;
+    height:50px;
+    border:transparent;
+    z-index: 1;
+    cursor: pointer;
+    top: -10px;
+    
+}
+  
+ 
+
+.i3-container2{
+    display: inline;
+}
+.six{
+    width: 100%;
+    height: 1500px;
+    background-color: #000;
+}
+.about-container{
+  height: 100vh;
+  width:100%;
+  background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("../static/Image1.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  
+}
+
+.about-img{
+  width: 30%;
+  height: 80%;
+  padding: 50px;
+
+}
+.about-img img{
+  height: 100%;
+  width: 100%;
+}
+.about-about{
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  color: #f7eedd;
+  font-size: 24px;
+  gap: 20px;
+
+}
+
+.about-button{
+  position: relative;
+  margin-top: 40px;
+  width:300px;
+  padding: 2px;
+  text-align: center;
+  border-radius: 50px;
+  background:transparent;
+  color:#f7eedd;
+  font-weight: 700;
+  margin-right: 50px;
+  margin-left: 20px;
+  height:50px;
+  border:2px solid  #f7eedd;
+  z-index: 1;
+  cursor: pointer;
+  display: inline;
+}
+
+.about-button span{
+  position: absolute;
+  height:100%;
+  width:0;
+  background: #7d643b;
+  left:0;
+  bottom:0;
+  border-radius: 50px;
+  z-index: -1;
+  transition: 0.5s;
+}
+
+.about-button:hover span{
+  width: 100%;
+}
+.about-btn{
+  display: flex;
+  gap: 10px;
+}
+h2{
+  display: inline-block;
+  margin: 0 0;
+  position:relative;
+  cursor: pointer;
+}
+h2::after{
+  position:absolute;
+    width: 0;
+    height: 100%;
+    content:'';
+    border:3px solid #f7eedd;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+    bottom:-2px;
+    left:0;
+    
+    transition: 0.5s;
+}
+h2:hover::after{
+  width: 30%;
+}
+</style>
+<body>
+   <div class="home">
+    <div class="topnav" id="myTopnav">
+          <a href="#news" class="mid">HOME</a>
+          <a href="#second" class="mid">ABOUT US</a>
+          <a href="#about" class="mid">TOOLS</a>
+          <a href="#about" class="end">CONNECT</a>
+          <a href="#about" class="end start">LOG IN</a>
+          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+          </a>
+        </div> 
+        <div class="content">
+           <h1>IIIT RANCHI</h1>
+           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus nisi impedit hic praesentium iusto ipsam ut optio, beatae eligendi nihil ab eos? Maiores, quas enim! Dicta autem aspernatur perferendis rem eligendi nesciunt eos inventore. Voluptatem aspernatur fugit alias molestias laborum.</p>
+         </div>
+
+         <div class="cardx">
+            <a class="socialContainer containerOne" href="https://www.instagram.com/iiitranchi/">
+              <svg viewBox="0 0 16 16" class="socialSvg instagramSvg">
+                <path
+                  d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
+                ></path>
+              </svg>
+            </a>
+          
+            <a class="socialContainer containerTwo" href="https://twitter.com/i/flow/login?redirect_after_login=%2Fiiitranchi">
+              <svg viewBox="0 0 16 16" class="socialSvg twitterSvg">
+                <path
+                  d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
+                ></path>
+              </svg>
+            </a>
+          
+            <a class="socialContainer containerThree" href="https://in.linkedin.com/school/indian-institute-of-information-technology-ranchi/">
+              <svg viewBox="0 0 448 512" class="socialSvg linkdinSvg">
+                <path
+                  d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
+                ></path>
+              </svg>
+            </a>
+          
+            <a class="socialContainer containerFour" href="#">
+              <svg viewBox="0 0 16 16" class="socialSvg whatsappSvg">
+                <path
+                  d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"
+                ></path>
+              </svg>
+            </a>
+          </div>
+   </div> 
+   <div class="second" id="second">
+    <div class="about-container">
+        <div class="about-img">
+          <img src="../static/Image1.jpg" alt="">
+        </div>
+        <div class="about-about">
+          <h2>ABOUT US</h2>
+          <h3>All Business Regarding Alumni at one Place..</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda ipsum provident repellat rem natus illum maiores. Ea fugiat iusto magnam corporis et quod adipisci nisi ullam ipsum sed modi, ratione non suscipit libero eaque perspiciatis commodi necessitatibus rem? Quis modi nisi, quam pariatur sunt beatae aliquid possimus suscipit ea laudantium?</p>
+          <div class="about-btn">
+            <button class="about-button"><span></span>READ MORE</button>
+            <button class="about-button" type="button"><span></span>CONTACT US</button>
+          </div>
+        </div>
+    
+    
+      </div>
+   </div>
+   <div class="third">
+    <div class="card-main">
+        <div class="card-searchbar">
+          <div class="searchBox">
+      
+            <input class="searchInput" type="text" name="" placeholder="Search something">
+            <button class="searchButton" href="#">
+                   
+                  
+      
+                                <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29" fill="none">
+      <g clip-path="url(#clip0_2_17)">
+      <g filter="url(#filter0_d_2_17)">
+      <path d="M23.7953 23.9182L19.0585 19.1814M19.0585 19.1814C19.8188 18.4211 20.4219 17.5185 20.8333 16.5251C21.2448 15.5318 21.4566 14.4671 21.4566 13.3919C21.4566 12.3167 21.2448 11.252 20.8333 10.2587C20.4219 9.2653 19.8188 8.36271 19.0585 7.60242C18.2982 6.84214 17.3956 6.23905 16.4022 5.82759C15.4089 5.41612 14.3442 5.20435 13.269 5.20435C12.1938 5.20435 11.1291 5.41612 10.1358 5.82759C9.1424 6.23905 8.23981 6.84214 7.47953 7.60242C5.94407 9.13789 5.08145 11.2204 5.08145 13.3919C5.08145 15.5634 5.94407 17.6459 7.47953 19.1814C9.01499 20.7168 11.0975 21.5794 13.269 21.5794C15.4405 21.5794 17.523 20.7168 19.0585 19.1814Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" shape-rendering="crispEdges"></path>
+      </g>
+      </g>
+      <defs>
+      <filter id="filter0_d_2_17" x="-0.418549" y="3.70435" width="29.7139" height="29.7139" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
+      <feOffset dy="4"></feOffset>
+      <feGaussianBlur stdDeviation="2"></feGaussianBlur>
+      <feComposite in2="hardAlpha" operator="out"></feComposite>
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"></feColorMatrix>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2_17"></feBlend>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2_17" result="shape"></feBlend>
+      </filter>
+      <clipPath id="clip0_2_17">
+      <rect width="28.0702" height="28.0702" fill="white" transform="translate(0.403503 0.526367)"></rect>
+      </clipPath>
+      </defs>
+      </svg>
+                     
+      
+            </button>
+        </div>
+      
+      
+        
+        </div>
+        <div class="card-top-alumni">
+          <div class="card1">
+            <div class="card">
+          <div class="card__img">
+            <svg width="100%" xmlns="http://www.w3.org/2000/svg">
+              <rect height="450" width="540" fill="#ffffff"></rect>
+              <defs>
+                <linearGradient
+                gradientTransform="rotate(222,648,379)"
+                y2="100%"
+                y1="0"
+                x2="0"
+                x1="0"
+                gradientUnits="userSpaceOnUse"
+                id="a"
+              >
+                <stop stop-color="#ffffff" offset="0"></stop>
+                <stop stop-color="#FC726E" offset="1"></stop>
+              </linearGradient>
+              <pattern
+                viewBox="0 0 1080 900"
+                y="0"
+                x="0"
+                height="250"
+                width="300"
+                id="b"
+                patternUnits="userSpaceOnUse"
+              >
+                <g fill-opacity="0.5">
+                  <polygon points="90 150 0 300 180 300" fill="#444"></polygon>
+                  <polygon points="90 150 180 0 0 0"></polygon>
+                  <polygon points="270 150 360 0 180 0" fill="#AAA"></polygon>
+                  <polygon points="450 150 360 300 540 300" fill="#DDD"></polygon>
+                  <polygon points="450 150 540 0 360 0" fill="#999"></polygon>
+                  <polygon points="630 150 540 300 720 300"></polygon>
+                  <polygon points="630 150 720 0 540 0" fill="#DDD"></polygon>
+                  <polygon points="810 150 720 300 900 300" fill="#444"></polygon>
+                  <polygon points="810 150 900 0 720 0" fill="#FFF"></polygon>
+                  <polygon points="990 150 900 300 1080 300" fill="#DDD"></polygon>
+                  <polygon points="990 150 1080 0 900 0" fill="#444"></polygon>
+                  <polygon points="90 450 0 600 180 600" fill="#DDD"></polygon>
+                  <polygon points="90 450 180 300 0 300"></polygon>
+                  <polygon points="270 450 180 600 360 600" fill="#666"></polygon>
+                  <polygon points="270 450 360 300 180 300" fill="#AAA"></polygon>
+                  <polygon points="450 450 360 600 540 600" fill="#DDD"></polygon>
+                  <polygon points="450 450 540 300 360 300" fill="#999"></polygon>
+                  <polygon points="630 450 540 600 720 600" fill="#999"></polygon>
+                  <polygon points="630 450 720 300 540 300" fill="#FFF"></polygon>
+                  <polygon points="810 450 720 600 900 600"></polygon>
+                  <polygon points="810 450 900 300 720 300" fill="#DDD"></polygon>
+                  <polygon points="990 450 900 600 1080 600" fill="#AAA"></polygon>
+                  <polygon points="990 450 1080 300 900 300" fill="#444"></polygon>
+                  <polygon points="90 750 0 900 180 900" fill="#222"></polygon>
+                  <polygon points="270 750 180 900 360 900"></polygon>
+                  <polygon points="270 750 360 600 180 600" fill="#DDD"></polygon>
+                  <polygon points="450 750 540 600 360 600"></polygon>
+                  <polygon points="630 750 540 900 720 900"></polygon>
+                  <polygon points="630 750 720 600 540 600" fill="#444"></polygon>
+                  <polygon points="810 750 720 900 900 900" fill="#AAA"></polygon>
+                  <polygon points="810 750 900 600 720 600" fill="#666"></polygon>
+                  <polygon points="990 750 900 900 1080 900" fill="#999"></polygon>
+                  <polygon points="180 0 90 150 270 150" fill="#999"></polygon>
+                  <polygon points="360 0 270 150 450 150" fill="#444"></polygon>
+                  <polygon points="540 0 450 150 630 150" fill="#FFF"></polygon>
+                  <polygon points="900 0 810 150 990 150"></polygon>
+                  <polygon points="0 300 -90 450 90 450" fill="#222"></polygon>
+                  <polygon points="0 300 90 150 -90 150" fill="#FFF"></polygon>
+                  <polygon points="180 300 90 450 270 450" fill="#FFF"></polygon>
+                  <polygon points="180 300 270 150 90 150" fill="#666"></polygon>
+                  <polygon points="360 300 270 450 450 450" fill="#222"></polygon>
+                  <polygon points="360 300 450 150 270 150" fill="#FFF"></polygon>
+                  <polygon points="540 300 450 450 630 450" fill="#444"></polygon>
+                  <polygon points="540 300 630 150 450 150" fill="#222"></polygon>
+                  <polygon points="720 300 630 450 810 450" fill="#AAA"></polygon>
+                  <polygon points="720 300 810 150 630 150" fill="#666"></polygon>
+                  <polygon points="900 300 810 450 990 450" fill="#FFF"></polygon>
+                  <polygon points="900 300 990 150 810 150" fill="#999"></polygon>
+                  <polygon points="0 600 -90 750 90 750"></polygon>
+                  <polygon points="0 600 90 450 -90 450" fill="#666"></polygon>
+                  <polygon points="180 600 90 750 270 750" fill="#AAA"></polygon>
+                  <polygon points="180 600 270 450 90 450" fill="#444"></polygon>
+                  <polygon points="360 600 270 750 450 750" fill="#444"></polygon>
+                  <polygon points="360 600 450 450 270 450" fill="#999"></polygon>
+                  <polygon points="540 600 630 450 450 450" fill="#666"></polygon>
+                  <polygon points="720 600 630 750 810 750" fill="#222"></polygon>
+                  <polygon points="900 600 810 750 990 750" fill="#FFF"></polygon>
+                  <polygon points="900 600 990 450 810 450" fill="#222"></polygon>
+                  <polygon points="0 900 90 750 -90 750" fill="#DDD"></polygon>
+                  <polygon points="180 900 270 750 90 750" fill="#444"></polygon>
+                  <polygon points="360 900 450 750 270 750" fill="#FFF"></polygon>
+                  <polygon points="540 900 630 750 450 750" fill="#AAA"></polygon>
+                  <polygon points="720 900 810 750 630 750" fill="#FFF"></polygon>
+                  <polygon points="900 900 990 750 810 750" fill="#222"></polygon>
+                  <polygon points="1080 300 990 450 1170 450" fill="#222"></polygon>
+                  <polygon points="1080 300 1170 150 990 150" fill="#FFF"></polygon>
+                  <polygon points="1080 600 990 750 1170 750"></polygon>
+                  <polygon points="1080 600 1170 450 990 450" fill="#666"></polygon>
+                  <polygon points="1080 900 1170 750 990 750" fill="#DDD"></polygon>
+                </g>
+              </pattern>
+            </defs>
+            <rect height="100%" width="100%" fill="url(#a)" y="0" x="0"></rect>
+            <rect height="100%" width="100%" fill="url(#b)" y="0" x="0"></rect>
+          </svg>
+        </div>
+        <div class="card__avatar">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+            <circle r="60" fill="#ff8475" cy="64" cx="64"></circle>
+            <circle r="48" opacity=".4" fill="#f85565" cy="64" cx="64"></circle>
+            <path
+              fill="#7f3838"
+              d="m64 14a32 32 0 0 1 32 32v41a6 6 0 0 1 -6 6h-52a6 6 0 0 1 -6-6v-41a32 32 0 0 1 32-32z"
+            ></path>
+            <path
+              opacity=".4"
+              fill="#393c54"
+              d="m62.73 22h2.54a23.73 23.73 0 0 1 23.73 23.73v42.82a4.45 4.45 0 0 1 -4.45 4.45h-41.1a4.45 4.45 0 0 1 -4.45-4.45v-42.82a23.73 23.73 0 0 1 23.73-23.73z"
+            ></path>
+            <circle r="7" fill="#fbc0aa" cy="65" cx="89"></circle>
+            <path
+              fill="#4bc190"
+              d="m64 124a59.67 59.67 0 0 0 34.69-11.06l-3.32-9.3a10 10 0 0 0 -9.37-6.64h-43.95a10 10 0 0 0 -9.42 6.64l-3.32 9.3a59.67 59.67 0 0 0 34.69 11.06z"
+            ></path>
+            <path
+              opacity=".3"
+              fill="#356cb6"
+              d="m45 110 5.55 2.92-2.55 8.92a60.14 60.14 0 0 0 9 1.74v-27.08l-12.38 10.25a2 2 0 0 0 .38 3.25z"
+            ></path>
+            <path
+              opacity=".3"
+              fill="#356cb6"
+              d="m71 96.5v27.09a60.14 60.14 0 0 0 9-1.74l-2.54-8.93 5.54-2.92a2 2 0 0 0 .41-3.25z"
+            ></path>
+            <path
+              fill="#fff"
+              d="m57 123.68a58.54 58.54 0 0 0 14 0v-25.68h-14z"
+            ></path>
+            <path
+              stroke-width="14"
+              stroke-linejoin="round"
+              stroke-linecap="round"
+              stroke="#fbc0aa"
+              fill="none"
+              d="m64 88.75v9.75"
+            ></path>
+            <circle r="7" fill="#fbc0aa" cy="65" cx="39"></circle>
+            <path
+              fill="#ffd8c9"
+              d="m64 91a25 25 0 0 1 -25-25v-16.48a25 25 0 1 1 50 0v16.48a25 25 0 0 1 -25 25z"
+            ></path>
+            <path
+              fill="#bc5b57"
+              d="m91.49 51.12v-4.72c0-14.95-11.71-27.61-26.66-28a27.51 27.51 0 0 0 -28.32 27.42v5.33a2 2 0 0 0 2 2h6.81a8 8 0 0 0 6.5-3.33l4.94-6.88a18.45 18.45 0 0 1 1.37 1.63 22.84 22.84 0 0 0 17.87 8.58h13.45a2 2 0 0 0 2.04-2.03z"
+            ></path>
+            <path
+              style="fill:none;stroke-linecap:round;stroke:#fff;stroke-miterlimit:10;stroke-width:2;opacity:.1"
+              d="m62.76 36.94c4.24 8.74 10.71 10.21 16.09 10.21h5"
+            ></path>
+            <path
+              style="fill:none;stroke-linecap:round;stroke:#fff;stroke-miterlimit:10;stroke-width:2;opacity:.1"
+              d="m71 35c2.52 5.22 6.39 6.09 9.6 6.09h3"
+            ></path>
+            <circle r="3" fill="#515570" cy="62.28" cx="76"></circle>
+            <circle r="3" fill="#515570" cy="62.28" cx="52"></circle>
+            <ellipse
+              ry="2.98"
+              rx="4.58"
+              opacity=".1"
+              fill="#f85565"
+              cy="69.67"
+              cx="50.42"
+            ></ellipse>
+            <ellipse
+              ry="2.98"
+              rx="4.58"
+              opacity=".1"
+              fill="#f85565"
+              cy="69.67"
+              cx="77.58"
+            ></ellipse>
+            <g stroke-linejoin="round" stroke-linecap="round" fill="none">
+              <path stroke-width="4" stroke="#fbc0aa" d="m64 67v4"></path>
+              <path
+                stroke-width="2"
+                stroke="#515570"
+                opacity=".2"
+                d="m55 56h-9.25"
+              ></path>
+              <path
+                stroke-width="2"
+                stroke="#515570"
+                opacity=".2"
+                d="m82 56h-9.25"
+              ></path>
+            </g>
+            <path
+              opacity=".4"
+              fill="#f85565"
+              d="m64 84c5 0 7-3 7-3h-14s2 3 7 3z"
+            ></path>
+            <path
+              fill="#f85565"
+              d="m65.07 78.93-.55.55a.73.73 0 0 1 -1 0l-.55-.55c-1.14-1.14-2.93-.93-4.27.47l-1.7 1.6h14l-1.66-1.6c-1.34-1.4-3.13-1.61-4.27-.47z"
+            ></path>
+          </svg>
+        </div>
+        <div class="card__title">Vikash Deep Yadav</div>
+        <div class="card__subtitle">Web Development</div>
+        <div class="card__wrapper">
+          <button class="card__btn btn-1">Follow</button>
+          <button class="card__btn card__btn-solid">read more</button>
+        </div>
+      </div>
+      </div>
+          <div class="card2">
+            <div class="card">
+              <div class="card__img">
+                <svg width="100%" xmlns="http://www.w3.org/2000/svg">
+                  <rect height="450" width="540" fill="#ffffff"></rect>
+                  <defs>
+                    <linearGradient
+                      gradientTransform="rotate(222,648,379)"
+                      y2="100%"
+                      y1="0"
+                      x2="0"
+                      x1="0"
+                      gradientUnits="userSpaceOnUse"
+                      id="a"
+                    >
+                      <stop stop-color="#ffffff" offset="0"></stop>
+                      <stop stop-color="#FC726E" offset="1"></stop>
+                    </linearGradient>
+                    <pattern
+                      viewBox="0 0 1080 900"
+                      y="0"
+                      x="0"
+                      height="250"
+                      width="300"
+                      id="b"
+                      patternUnits="userSpaceOnUse"
+                    >
+                      <g fill-opacity="0.5">
+                        <polygon points="90 150 0 300 180 300" fill="#444"></polygon>
+                        <polygon points="90 150 180 0 0 0"></polygon>
+                        <polygon points="270 150 360 0 180 0" fill="#AAA"></polygon>
+                        <polygon points="450 150 360 300 540 300" fill="#DDD"></polygon>
+                        <polygon points="450 150 540 0 360 0" fill="#999"></polygon>
+                        <polygon points="630 150 540 300 720 300"></polygon>
+                        <polygon points="630 150 720 0 540 0" fill="#DDD"></polygon>
+                        <polygon points="810 150 720 300 900 300" fill="#444"></polygon>
+                        <polygon points="810 150 900 0 720 0" fill="#FFF"></polygon>
+                        <polygon points="990 150 900 300 1080 300" fill="#DDD"></polygon>
+                        <polygon points="990 150 1080 0 900 0" fill="#444"></polygon>
+                        <polygon points="90 450 0 600 180 600" fill="#DDD"></polygon>
+                        <polygon points="90 450 180 300 0 300"></polygon>
+                        <polygon points="270 450 180 600 360 600" fill="#666"></polygon>
+                        <polygon points="270 450 360 300 180 300" fill="#AAA"></polygon>
+                        <polygon points="450 450 360 600 540 600" fill="#DDD"></polygon>
+                        <polygon points="450 450 540 300 360 300" fill="#999"></polygon>
+                        <polygon points="630 450 540 600 720 600" fill="#999"></polygon>
+                        <polygon points="630 450 720 300 540 300" fill="#FFF"></polygon>
+                        <polygon points="810 450 720 600 900 600"></polygon>
+                        <polygon points="810 450 900 300 720 300" fill="#DDD"></polygon>
+                        <polygon points="990 450 900 600 1080 600" fill="#AAA"></polygon>
+                        <polygon points="990 450 1080 300 900 300" fill="#444"></polygon>
+                        <polygon points="90 750 0 900 180 900" fill="#222"></polygon>
+                        <polygon points="270 750 180 900 360 900"></polygon>
+                        <polygon points="270 750 360 600 180 600" fill="#DDD"></polygon>
+                        <polygon points="450 750 540 600 360 600"></polygon>
+                        <polygon points="630 750 540 900 720 900"></polygon>
+                        <polygon points="630 750 720 600 540 600" fill="#444"></polygon>
+                        <polygon points="810 750 720 900 900 900" fill="#AAA"></polygon>
+                        <polygon points="810 750 900 600 720 600" fill="#666"></polygon>
+                        <polygon points="990 750 900 900 1080 900" fill="#999"></polygon>
+                        <polygon points="180 0 90 150 270 150" fill="#999"></polygon>
+                        <polygon points="360 0 270 150 450 150" fill="#444"></polygon>
+                        <polygon points="540 0 450 150 630 150" fill="#FFF"></polygon>
+                        <polygon points="900 0 810 150 990 150"></polygon>
+                        <polygon points="0 300 -90 450 90 450" fill="#222"></polygon>
+                        <polygon points="0 300 90 150 -90 150" fill="#FFF"></polygon>
+                        <polygon points="180 300 90 450 270 450" fill="#FFF"></polygon>
+                        <polygon points="180 300 270 150 90 150" fill="#666"></polygon>
+                        <polygon points="360 300 270 450 450 450" fill="#222"></polygon>
+                        <polygon points="360 300 450 150 270 150" fill="#FFF"></polygon>
+                        <polygon points="540 300 450 450 630 450" fill="#444"></polygon>
+                        <polygon points="540 300 630 150 450 150" fill="#222"></polygon>
+                        <polygon points="720 300 630 450 810 450" fill="#AAA"></polygon>
+                        <polygon points="720 300 810 150 630 150" fill="#666"></polygon>
+                        <polygon points="900 300 810 450 990 450" fill="#FFF"></polygon>
+                        <polygon points="900 300 990 150 810 150" fill="#999"></polygon>
+                        <polygon points="0 600 -90 750 90 750"></polygon>
+                        <polygon points="0 600 90 450 -90 450" fill="#666"></polygon>
+                        <polygon points="180 600 90 750 270 750" fill="#AAA"></polygon>
+                        <polygon points="180 600 270 450 90 450" fill="#444"></polygon>
+                        <polygon points="360 600 270 750 450 750" fill="#444"></polygon>
+                        <polygon points="360 600 450 450 270 450" fill="#999"></polygon>
+                        <polygon points="540 600 630 450 450 450" fill="#666"></polygon>
+                        <polygon points="720 600 630 750 810 750" fill="#222"></polygon>
+                        <polygon points="900 600 810 750 990 750" fill="#FFF"></polygon>
+                        <polygon points="900 600 990 450 810 450" fill="#222"></polygon>
+                        <polygon points="0 900 90 750 -90 750" fill="#DDD"></polygon>
+                        <polygon points="180 900 270 750 90 750" fill="#444"></polygon>
+                        <polygon points="360 900 450 750 270 750" fill="#FFF"></polygon>
+                        <polygon points="540 900 630 750 450 750" fill="#AAA"></polygon>
+                        <polygon points="720 900 810 750 630 750" fill="#FFF"></polygon>
+                        <polygon points="900 900 990 750 810 750" fill="#222"></polygon>
+                        <polygon points="1080 300 990 450 1170 450" fill="#222"></polygon>
+                        <polygon points="1080 300 1170 150 990 150" fill="#FFF"></polygon>
+                        <polygon points="1080 600 990 750 1170 750"></polygon>
+                        <polygon points="1080 600 1170 450 990 450" fill="#666"></polygon>
+                        <polygon points="1080 900 1170 750 990 750" fill="#DDD"></polygon>
+                      </g>
+                    </pattern>
+                  </defs>
+                  <rect height="100%" width="100%" fill="url(#a)" y="0" x="0"></rect>
+                  <rect height="100%" width="100%" fill="url(#b)" y="0" x="0"></rect>
+                </svg>
+              </div>
+              <div class="card__avatar">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+                  <circle r="60" fill="#ff8475" cy="64" cx="64"></circle>
+                  <circle r="48" opacity=".4" fill="#f85565" cy="64" cx="64"></circle>
+                  <path
+                    fill="#7f3838"
+                    d="m64 14a32 32 0 0 1 32 32v41a6 6 0 0 1 -6 6h-52a6 6 0 0 1 -6-6v-41a32 32 0 0 1 32-32z"
+                  ></path>
+                  <path
+                    opacity=".4"
+                    fill="#393c54"
+                    d="m62.73 22h2.54a23.73 23.73 0 0 1 23.73 23.73v42.82a4.45 4.45 0 0 1 -4.45 4.45h-41.1a4.45 4.45 0 0 1 -4.45-4.45v-42.82a23.73 23.73 0 0 1 23.73-23.73z"
+                  ></path>
+                  <circle r="7" fill="#fbc0aa" cy="65" cx="89"></circle>
+                  <path
+                    fill="#4bc190"
+                    d="m64 124a59.67 59.67 0 0 0 34.69-11.06l-3.32-9.3a10 10 0 0 0 -9.37-6.64h-43.95a10 10 0 0 0 -9.42 6.64l-3.32 9.3a59.67 59.67 0 0 0 34.69 11.06z"
+                  ></path>
+                  <path
+                    opacity=".3"
+                    fill="#356cb6"
+                    d="m45 110 5.55 2.92-2.55 8.92a60.14 60.14 0 0 0 9 1.74v-27.08l-12.38 10.25a2 2 0 0 0 .38 3.25z"
+                  ></path>
+                  <path
+                    opacity=".3"
+                    fill="#356cb6"
+                    d="m71 96.5v27.09a60.14 60.14 0 0 0 9-1.74l-2.54-8.93 5.54-2.92a2 2 0 0 0 .41-3.25z"
+                  ></path>
+                  <path
+                    fill="#fff"
+                    d="m57 123.68a58.54 58.54 0 0 0 14 0v-25.68h-14z"
+                  ></path>
+                  <path
+                    stroke-width="14"
+                    stroke-linejoin="round"
+                    stroke-linecap="round"
+                    stroke="#fbc0aa"
+                    fill="none"
+                    d="m64 88.75v9.75"
+                  ></path>
+                  <circle r="7" fill="#fbc0aa" cy="65" cx="39"></circle>
+                  <path
+                    fill="#ffd8c9"
+                    d="m64 91a25 25 0 0 1 -25-25v-16.48a25 25 0 1 1 50 0v16.48a25 25 0 0 1 -25 25z"
+                  ></path>
+                  <path
+                    fill="#bc5b57"
+                    d="m91.49 51.12v-4.72c0-14.95-11.71-27.61-26.66-28a27.51 27.51 0 0 0 -28.32 27.42v5.33a2 2 0 0 0 2 2h6.81a8 8 0 0 0 6.5-3.33l4.94-6.88a18.45 18.45 0 0 1 1.37 1.63 22.84 22.84 0 0 0 17.87 8.58h13.45a2 2 0 0 0 2.04-2.03z"
+                  ></path>
+                  <path
+                    style="fill:none;stroke-linecap:round;stroke:#fff;stroke-miterlimit:10;stroke-width:2;opacity:.1"
+                    d="m62.76 36.94c4.24 8.74 10.71 10.21 16.09 10.21h5"
+                  ></path>
+                  <path
+                    style="fill:none;stroke-linecap:round;stroke:#fff;stroke-miterlimit:10;stroke-width:2;opacity:.1"
+                    d="m71 35c2.52 5.22 6.39 6.09 9.6 6.09h3"
+                  ></path>
+                  <circle r="3" fill="#515570" cy="62.28" cx="76"></circle>
+                  <circle r="3" fill="#515570" cy="62.28" cx="52"></circle>
+                  <ellipse
+                    ry="2.98"
+                    rx="4.58"
+                    opacity=".1"
+                    fill="#f85565"
+                    cy="69.67"
+                    cx="50.42"
+                  ></ellipse>
+                  <ellipse
+                    ry="2.98"
+                    rx="4.58"
+                    opacity=".1"
+                    fill="#f85565"
+                    cy="69.67"
+                    cx="77.58"
+                  ></ellipse>
+                  <g stroke-linejoin="round" stroke-linecap="round" fill="none">
+                    <path stroke-width="4" stroke="#fbc0aa" d="m64 67v4"></path>
+                    <path
+                      stroke-width="2"
+                      stroke="#515570"
+                      opacity=".2"
+                      d="m55 56h-9.25"
+                    ></path>
+                    <path
+                      stroke-width="2"
+                      stroke="#515570"
+                      opacity=".2"
+                      d="m82 56h-9.25"
+                    ></path>
+                  </g>
+                  <path
+                    opacity=".4"
+                    fill="#f85565"
+                    d="m64 84c5 0 7-3 7-3h-14s2 3 7 3z"
+                  ></path>
+                  <path
+                    fill="#f85565"
+                    d="m65.07 78.93-.55.55a.73.73 0 0 1 -1 0l-.55-.55c-1.14-1.14-2.93-.93-4.27.47l-1.7 1.6h14l-1.66-1.6c-1.34-1.4-3.13-1.61-4.27-.47z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="card__title">Vikash Deep Yadav</div>
+              <div class="card__subtitle">Web Development</div>
+              <div class="card__wrapper">
+                <button class="card__btn">Follow</button>
+                <button class="card__btn card__btn-solid">read more</button>
+              </div>
+            </div>
+            
+          </div>
+          <div class="card3">
+            <div class="card">
+              <div class="card__img">
+                <svg width="100%" xmlns="http://www.w3.org/2000/svg">
+                  <rect height="450" width="540" fill="#ffffff"></rect>
+                  <defs>
+                    <linearGradient
+                      gradientTransform="rotate(222,648,379)"
+                      y2="100%"
+                      y1="0"
+                      x2="0"
+                      x1="0"
+                      gradientUnits="userSpaceOnUse"
+                      id="a"
+                    >
+                      <stop stop-color="#ffffff" offset="0"></stop>
+                      <stop stop-color="#FC726E" offset="1"></stop>
+                    </linearGradient>
+                    <pattern
+                      viewBox="0 0 1080 900"
+                      y="0"
+                      x="0"
+                      height="250"
+                      width="300"
+                      id="b"
+                      patternUnits="userSpaceOnUse"
+                    >
+                      <g fill-opacity="0.5">
+                        <polygon points="90 150 0 300 180 300" fill="#444"></polygon>
+                        <polygon points="90 150 180 0 0 0"></polygon>
+                        <polygon points="270 150 360 0 180 0" fill="#AAA"></polygon>
+                        <polygon points="450 150 360 300 540 300" fill="#DDD"></polygon>
+                        <polygon points="450 150 540 0 360 0" fill="#999"></polygon>
+                        <polygon points="630 150 540 300 720 300"></polygon>
+                        <polygon points="630 150 720 0 540 0" fill="#DDD"></polygon>
+                        <polygon points="810 150 720 300 900 300" fill="#444"></polygon>
+                        <polygon points="810 150 900 0 720 0" fill="#FFF"></polygon>
+                        <polygon points="990 150 900 300 1080 300" fill="#DDD"></polygon>
+                        <polygon points="990 150 1080 0 900 0" fill="#444"></polygon>
+                        <polygon points="90 450 0 600 180 600" fill="#DDD"></polygon>
+                        <polygon points="90 450 180 300 0 300"></polygon>
+                        <polygon points="270 450 180 600 360 600" fill="#666"></polygon>
+                        <polygon points="270 450 360 300 180 300" fill="#AAA"></polygon>
+                        <polygon points="450 450 360 600 540 600" fill="#DDD"></polygon>
+                        <polygon points="450 450 540 300 360 300" fill="#999"></polygon>
+                        <polygon points="630 450 540 600 720 600" fill="#999"></polygon>
+                        <polygon points="630 450 720 300 540 300" fill="#FFF"></polygon>
+                        <polygon points="810 450 720 600 900 600"></polygon>
+                        <polygon points="810 450 900 300 720 300" fill="#DDD"></polygon>
+                        <polygon points="990 450 900 600 1080 600" fill="#AAA"></polygon>
+                        <polygon points="990 450 1080 300 900 300" fill="#444"></polygon>
+                        <polygon points="90 750 0 900 180 900" fill="#222"></polygon>
+                        <polygon points="270 750 180 900 360 900"></polygon>
+                        <polygon points="270 750 360 600 180 600" fill="#DDD"></polygon>
+                        <polygon points="450 750 540 600 360 600"></polygon>
+                        <polygon points="630 750 540 900 720 900"></polygon>
+                        <polygon points="630 750 720 600 540 600" fill="#444"></polygon>
+                        <polygon points="810 750 720 900 900 900" fill="#AAA"></polygon>
+                        <polygon points="810 750 900 600 720 600" fill="#666"></polygon>
+                        <polygon points="990 750 900 900 1080 900" fill="#999"></polygon>
+                        <polygon points="180 0 90 150 270 150" fill="#999"></polygon>
+                        <polygon points="360 0 270 150 450 150" fill="#444"></polygon>
+                        <polygon points="540 0 450 150 630 150" fill="#FFF"></polygon>
+                        <polygon points="900 0 810 150 990 150"></polygon>
+                        <polygon points="0 300 -90 450 90 450" fill="#222"></polygon>
+                        <polygon points="0 300 90 150 -90 150" fill="#FFF"></polygon>
+                        <polygon points="180 300 90 450 270 450" fill="#FFF"></polygon>
+                        <polygon points="180 300 270 150 90 150" fill="#666"></polygon>
+                        <polygon points="360 300 270 450 450 450" fill="#222"></polygon>
+                        <polygon points="360 300 450 150 270 150" fill="#FFF"></polygon>
+                        <polygon points="540 300 450 450 630 450" fill="#444"></polygon>
+                        <polygon points="540 300 630 150 450 150" fill="#222"></polygon>
+                        <polygon points="720 300 630 450 810 450" fill="#AAA"></polygon>
+                        <polygon points="720 300 810 150 630 150" fill="#666"></polygon>
+                        <polygon points="900 300 810 450 990 450" fill="#FFF"></polygon>
+                        <polygon points="900 300 990 150 810 150" fill="#999"></polygon>
+                        <polygon points="0 600 -90 750 90 750"></polygon>
+                        <polygon points="0 600 90 450 -90 450" fill="#666"></polygon>
+                        <polygon points="180 600 90 750 270 750" fill="#AAA"></polygon>
+                        <polygon points="180 600 270 450 90 450" fill="#444"></polygon>
+                        <polygon points="360 600 270 750 450 750" fill="#444"></polygon>
+                        <polygon points="360 600 450 450 270 450" fill="#999"></polygon>
+                        <polygon points="540 600 630 450 450 450" fill="#666"></polygon>
+                        <polygon points="720 600 630 750 810 750" fill="#222"></polygon>
+                        <polygon points="900 600 810 750 990 750" fill="#FFF"></polygon>
+                        <polygon points="900 600 990 450 810 450" fill="#222"></polygon>
+                        <polygon points="0 900 90 750 -90 750" fill="#DDD"></polygon>
+                        <polygon points="180 900 270 750 90 750" fill="#444"></polygon>
+                        <polygon points="360 900 450 750 270 750" fill="#FFF"></polygon>
+                        <polygon points="540 900 630 750 450 750" fill="#AAA"></polygon>
+                        <polygon points="720 900 810 750 630 750" fill="#FFF"></polygon>
+                        <polygon points="900 900 990 750 810 750" fill="#222"></polygon>
+                        <polygon points="1080 300 990 450 1170 450" fill="#222"></polygon>
+                        <polygon points="1080 300 1170 150 990 150" fill="#FFF"></polygon>
+                        <polygon points="1080 600 990 750 1170 750"></polygon>
+                        <polygon points="1080 600 1170 450 990 450" fill="#666"></polygon>
+                        <polygon points="1080 900 1170 750 990 750" fill="#DDD"></polygon>
+                      </g>
+                    </pattern>
+                  </defs>
+                  <rect height="100%" width="100%" fill="url(#a)" y="0" x="0"></rect>
+                  <rect height="100%" width="100%" fill="url(#b)" y="0" x="0"></rect>
+                </svg>
+              </div>
+              <div class="card__avatar">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+                  <circle r="60" fill="#ff8475" cy="64" cx="64"></circle>
+                  <circle r="48" opacity=".4" fill="#f85565" cy="64" cx="64"></circle>
+                  <path
+                    fill="#7f3838"
+                    d="m64 14a32 32 0 0 1 32 32v41a6 6 0 0 1 -6 6h-52a6 6 0 0 1 -6-6v-41a32 32 0 0 1 32-32z"
+                  ></path>
+                  <path
+                    opacity=".4"
+                    fill="#393c54"
+                    d="m62.73 22h2.54a23.73 23.73 0 0 1 23.73 23.73v42.82a4.45 4.45 0 0 1 -4.45 4.45h-41.1a4.45 4.45 0 0 1 -4.45-4.45v-42.82a23.73 23.73 0 0 1 23.73-23.73z"
+                  ></path>
+                  <circle r="7" fill="#fbc0aa" cy="65" cx="89"></circle>
+                  <path
+                    fill="#4bc190"
+                    d="m64 124a59.67 59.67 0 0 0 34.69-11.06l-3.32-9.3a10 10 0 0 0 -9.37-6.64h-43.95a10 10 0 0 0 -9.42 6.64l-3.32 9.3a59.67 59.67 0 0 0 34.69 11.06z"
+                  ></path>
+                  <path
+                    opacity=".3"
+                    fill="#356cb6"
+                    d="m45 110 5.55 2.92-2.55 8.92a60.14 60.14 0 0 0 9 1.74v-27.08l-12.38 10.25a2 2 0 0 0 .38 3.25z"
+                  ></path>
+                  <path
+                    opacity=".3"
+                    fill="#356cb6"
+                    d="m71 96.5v27.09a60.14 60.14 0 0 0 9-1.74l-2.54-8.93 5.54-2.92a2 2 0 0 0 .41-3.25z"
+                  ></path>
+                  <path
+                    fill="#fff"
+                    d="m57 123.68a58.54 58.54 0 0 0 14 0v-25.68h-14z"
+                  ></path>
+                  <path
+                    stroke-width="14"
+                    stroke-linejoin="round"
+                    stroke-linecap="round"
+                    stroke="#fbc0aa"
+                    fill="none"
+                    d="m64 88.75v9.75"
+                  ></path>
+                  <circle r="7" fill="#fbc0aa" cy="65" cx="39"></circle>
+                  <path
+                    fill="#ffd8c9"
+                    d="m64 91a25 25 0 0 1 -25-25v-16.48a25 25 0 1 1 50 0v16.48a25 25 0 0 1 -25 25z"
+                  ></path>
+                  <path
+                    fill="#bc5b57"
+                    d="m91.49 51.12v-4.72c0-14.95-11.71-27.61-26.66-28a27.51 27.51 0 0 0 -28.32 27.42v5.33a2 2 0 0 0 2 2h6.81a8 8 0 0 0 6.5-3.33l4.94-6.88a18.45 18.45 0 0 1 1.37 1.63 22.84 22.84 0 0 0 17.87 8.58h13.45a2 2 0 0 0 2.04-2.03z"
+                  ></path>
+                  <path
+                    style="fill:none;stroke-linecap:round;stroke:#fff;stroke-miterlimit:10;stroke-width:2;opacity:.1"
+                    d="m62.76 36.94c4.24 8.74 10.71 10.21 16.09 10.21h5"
+                  ></path>
+                  <path
+                    style="fill:none;stroke-linecap:round;stroke:#fff;stroke-miterlimit:10;stroke-width:2;opacity:.1"
+                    d="m71 35c2.52 5.22 6.39 6.09 9.6 6.09h3"
+                  ></path>
+                  <circle r="3" fill="#515570" cy="62.28" cx="76"></circle>
+                  <circle r="3" fill="#515570" cy="62.28" cx="52"></circle>
+                  <ellipse
+                    ry="2.98"
+                    rx="4.58"
+                    opacity=".1"
+                    fill="#f85565"
+                    cy="69.67"
+                    cx="50.42"
+                  ></ellipse>
+                  <ellipse
+                    ry="2.98"
+                    rx="4.58"
+                    opacity=".1"
+                    fill="#f85565"
+                    cy="69.67"
+                    cx="77.58"
+                  ></ellipse>
+                  <g stroke-linejoin="round" stroke-linecap="round" fill="none">
+                    <path stroke-width="4" stroke="#fbc0aa" d="m64 67v4"></path>
+                    <path
+                      stroke-width="2"
+                      stroke="#515570"
+                      opacity=".2"
+                      d="m55 56h-9.25"
+                    ></path>
+                    <path
+                      stroke-width="2"
+                      stroke="#515570"
+                      opacity=".2"
+                      d="m82 56h-9.25"
+                    ></path>
+                  </g>
+                  <path
+                    opacity=".4"
+                    fill="#f85565"
+                    d="m64 84c5 0 7-3 7-3h-14s2 3 7 3z"
+                  ></path>
+                  <path
+                    fill="#f85565"
+                    d="m65.07 78.93-.55.55a.73.73 0 0 1 -1 0l-.55-.55c-1.14-1.14-2.93-.93-4.27.47l-1.7 1.6h14l-1.66-1.6c-1.34-1.4-3.13-1.61-4.27-.47z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="card__title">Vikash Deep Yadav</div>
+              <div class="card__subtitle">Web Development</div>
+              <div class="card__wrapper">
+                <button class="card__btn">Follow</button>
+                <button class="card__btn card__btn-solid">read more</button>
+              </div>
+            </div>
+            
+            
+          </div>
+          <div class="card4">
+            <div class="card">
+              <div class="card__img">
+                <svg width="100%" xmlns="http://www.w3.org/2000/svg">
+                  <rect height="450" width="540" fill="#ffffff"></rect>
+                  <defs>
+                    <linearGradient
+                      gradientTransform="rotate(222,648,379)"
+                      y2="100%"
+                      y1="0"
+                      x2="0"
+                      x1="0"
+                      gradientUnits="userSpaceOnUse"
+                      id="a"
+                    >
+                      <stop stop-color="#ffffff" offset="0"></stop>
+                      <stop stop-color="#FC726E" offset="1"></stop>
+                    </linearGradient>
+                    <pattern
+                      viewBox="0 0 1080 900"
+                      y="0"
+                      x="0"
+                      height="250"
+                      width="300"
+                      id="b"
+                      patternUnits="userSpaceOnUse"
+                    >
+                      <g fill-opacity="0.5">
+                        <polygon points="90 150 0 300 180 300" fill="#444"></polygon>
+                        <polygon points="90 150 180 0 0 0"></polygon>
+                        <polygon points="270 150 360 0 180 0" fill="#AAA"></polygon>
+                        <polygon points="450 150 360 300 540 300" fill="#DDD"></polygon>
+                        <polygon points="450 150 540 0 360 0" fill="#999"></polygon>
+                        <polygon points="630 150 540 300 720 300"></polygon>
+                        <polygon points="630 150 720 0 540 0" fill="#DDD"></polygon>
+                        <polygon points="810 150 720 300 900 300" fill="#444"></polygon>
+                        <polygon points="810 150 900 0 720 0" fill="#FFF"></polygon>
+                        <polygon points="990 150 900 300 1080 300" fill="#DDD"></polygon>
+                        <polygon points="990 150 1080 0 900 0" fill="#444"></polygon>
+                        <polygon points="90 450 0 600 180 600" fill="#DDD"></polygon>
+                        <polygon points="90 450 180 300 0 300"></polygon>
+                        <polygon points="270 450 180 600 360 600" fill="#666"></polygon>
+                        <polygon points="270 450 360 300 180 300" fill="#AAA"></polygon>
+                        <polygon points="450 450 360 600 540 600" fill="#DDD"></polygon>
+                        <polygon points="450 450 540 300 360 300" fill="#999"></polygon>
+                        <polygon points="630 450 540 600 720 600" fill="#999"></polygon>
+                        <polygon points="630 450 720 300 540 300" fill="#FFF"></polygon>
+                        <polygon points="810 450 720 600 900 600"></polygon>
+                        <polygon points="810 450 900 300 720 300" fill="#DDD"></polygon>
+                        <polygon points="990 450 900 600 1080 600" fill="#AAA"></polygon>
+                        <polygon points="990 450 1080 300 900 300" fill="#444"></polygon>
+                        <polygon points="90 750 0 900 180 900" fill="#222"></polygon>
+                        <polygon points="270 750 180 900 360 900"></polygon>
+                        <polygon points="270 750 360 600 180 600" fill="#DDD"></polygon>
+                        <polygon points="450 750 540 600 360 600"></polygon>
+                        <polygon points="630 750 540 900 720 900"></polygon>
+                        <polygon points="630 750 720 600 540 600" fill="#444"></polygon>
+                        <polygon points="810 750 720 900 900 900" fill="#AAA"></polygon>
+                        <polygon points="810 750 900 600 720 600" fill="#666"></polygon>
+                        <polygon points="990 750 900 900 1080 900" fill="#999"></polygon>
+                        <polygon points="180 0 90 150 270 150" fill="#999"></polygon>
+                        <polygon points="360 0 270 150 450 150" fill="#444"></polygon>
+                        <polygon points="540 0 450 150 630 150" fill="#FFF"></polygon>
+                        <polygon points="900 0 810 150 990 150"></polygon>
+                        <polygon points="0 300 -90 450 90 450" fill="#222"></polygon>
+                        <polygon points="0 300 90 150 -90 150" fill="#FFF"></polygon>
+                        <polygon points="180 300 90 450 270 450" fill="#FFF"></polygon>
+                        <polygon points="180 300 270 150 90 150" fill="#666"></polygon>
+                        <polygon points="360 300 270 450 450 450" fill="#222"></polygon>
+                        <polygon points="360 300 450 150 270 150" fill="#FFF"></polygon>
+                        <polygon points="540 300 450 450 630 450" fill="#444"></polygon>
+                        <polygon points="540 300 630 150 450 150" fill="#222"></polygon>
+                        <polygon points="720 300 630 450 810 450" fill="#AAA"></polygon>
+                        <polygon points="720 300 810 150 630 150" fill="#666"></polygon>
+                        <polygon points="900 300 810 450 990 450" fill="#FFF"></polygon>
+                        <polygon points="900 300 990 150 810 150" fill="#999"></polygon>
+                        <polygon points="0 600 -90 750 90 750"></polygon>
+                        <polygon points="0 600 90 450 -90 450" fill="#666"></polygon>
+                        <polygon points="180 600 90 750 270 750" fill="#AAA"></polygon>
+                        <polygon points="180 600 270 450 90 450" fill="#444"></polygon>
+                        <polygon points="360 600 270 750 450 750" fill="#444"></polygon>
+                        <polygon points="360 600 450 450 270 450" fill="#999"></polygon>
+                        <polygon points="540 600 630 450 450 450" fill="#666"></polygon>
+                        <polygon points="720 600 630 750 810 750" fill="#222"></polygon>
+                        <polygon points="900 600 810 750 990 750" fill="#FFF"></polygon>
+                        <polygon points="900 600 990 450 810 450" fill="#222"></polygon>
+                        <polygon points="0 900 90 750 -90 750" fill="#DDD"></polygon>
+                        <polygon points="180 900 270 750 90 750" fill="#444"></polygon>
+                        <polygon points="360 900 450 750 270 750" fill="#FFF"></polygon>
+                        <polygon points="540 900 630 750 450 750" fill="#AAA"></polygon>
+                        <polygon points="720 900 810 750 630 750" fill="#FFF"></polygon>
+                        <polygon points="900 900 990 750 810 750" fill="#222"></polygon>
+                        <polygon points="1080 300 990 450 1170 450" fill="#222"></polygon>
+                        <polygon points="1080 300 1170 150 990 150" fill="#FFF"></polygon>
+                        <polygon points="1080 600 990 750 1170 750"></polygon>
+                        <polygon points="1080 600 1170 450 990 450" fill="#666"></polygon>
+                        <polygon points="1080 900 1170 750 990 750" fill="#DDD"></polygon>
+                      </g>
+                    </pattern>
+                  </defs>
+                  <rect height="100%" width="100%" fill="url(#a)" y="0" x="0"></rect>
+                  <rect height="100%" width="100%" fill="url(#b)" y="0" x="0"></rect>
+                </svg>
+              </div>
+              <div class="card__avatar">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+                  <circle r="60" fill="#ff8475" cy="64" cx="64"></circle>
+                  <circle r="48" opacity=".4" fill="#f85565" cy="64" cx="64"></circle>
+                  <path
+                    fill="#7f3838"
+                    d="m64 14a32 32 0 0 1 32 32v41a6 6 0 0 1 -6 6h-52a6 6 0 0 1 -6-6v-41a32 32 0 0 1 32-32z"
+                  ></path>
+                  <path
+                    opacity=".4"
+                    fill="#393c54"
+                    d="m62.73 22h2.54a23.73 23.73 0 0 1 23.73 23.73v42.82a4.45 4.45 0 0 1 -4.45 4.45h-41.1a4.45 4.45 0 0 1 -4.45-4.45v-42.82a23.73 23.73 0 0 1 23.73-23.73z"
+                  ></path>
+                  <circle r="7" fill="#fbc0aa" cy="65" cx="89"></circle>
+                  <path
+                    fill="#4bc190"
+                    d="m64 124a59.67 59.67 0 0 0 34.69-11.06l-3.32-9.3a10 10 0 0 0 -9.37-6.64h-43.95a10 10 0 0 0 -9.42 6.64l-3.32 9.3a59.67 59.67 0 0 0 34.69 11.06z"
+                  ></path>
+                  <path
+                    opacity=".3"
+                    fill="#356cb6"
+                    d="m45 110 5.55 2.92-2.55 8.92a60.14 60.14 0 0 0 9 1.74v-27.08l-12.38 10.25a2 2 0 0 0 .38 3.25z"
+                  ></path>
+                  <path
+                    opacity=".3"
+                    fill="#356cb6"
+                    d="m71 96.5v27.09a60.14 60.14 0 0 0 9-1.74l-2.54-8.93 5.54-2.92a2 2 0 0 0 .41-3.25z"
+                  ></path>
+                  <path
+                    fill="#fff"
+                    d="m57 123.68a58.54 58.54 0 0 0 14 0v-25.68h-14z"
+                  ></path>
+                  <path
+                    stroke-width="14"
+                    stroke-linejoin="round"
+                    stroke-linecap="round"
+                    stroke="#fbc0aa"
+                    fill="none"
+                    d="m64 88.75v9.75"
+                  ></path>
+                  <circle r="7" fill="#fbc0aa" cy="65" cx="39"></circle>
+                  <path
+                    fill="#ffd8c9"
+                    d="m64 91a25 25 0 0 1 -25-25v-16.48a25 25 0 1 1 50 0v16.48a25 25 0 0 1 -25 25z"
+                  ></path>
+                  <path
+                    fill="#bc5b57"
+                    d="m91.49 51.12v-4.72c0-14.95-11.71-27.61-26.66-28a27.51 27.51 0 0 0 -28.32 27.42v5.33a2 2 0 0 0 2 2h6.81a8 8 0 0 0 6.5-3.33l4.94-6.88a18.45 18.45 0 0 1 1.37 1.63 22.84 22.84 0 0 0 17.87 8.58h13.45a2 2 0 0 0 2.04-2.03z"
+                  ></path>
+                  <path
+                    style="fill:none;stroke-linecap:round;stroke:#fff;stroke-miterlimit:10;stroke-width:2;opacity:.1"
+                    d="m62.76 36.94c4.24 8.74 10.71 10.21 16.09 10.21h5"
+                  ></path>
+                  <path
+                    style="fill:none;stroke-linecap:round;stroke:#fff;stroke-miterlimit:10;stroke-width:2;opacity:.1"
+                    d="m71 35c2.52 5.22 6.39 6.09 9.6 6.09h3"
+                  ></path>
+                  <circle r="3" fill="#515570" cy="62.28" cx="76"></circle>
+                  <circle r="3" fill="#515570" cy="62.28" cx="52"></circle>
+                  <ellipse
+                    ry="2.98"
+                    rx="4.58"
+                    opacity=".1"
+                    fill="#f85565"
+                    cy="69.67"
+                    cx="50.42"
+                  ></ellipse>
+                  <ellipse
+                    ry="2.98"
+                    rx="4.58"
+                    opacity=".1"
+                    fill="#f85565"
+                    cy="69.67"
+                    cx="77.58"
+                  ></ellipse>
+                  <g stroke-linejoin="round" stroke-linecap="round" fill="none">
+                    <path stroke-width="4" stroke="#fbc0aa" d="m64 67v4"></path>
+                    <path
+                      stroke-width="2"
+                      stroke="#515570"
+                      opacity=".2"
+                      d="m55 56h-9.25"
+                    ></path>
+                    <path
+                      stroke-width="2"
+                      stroke="#515570"
+                      opacity=".2"
+                      d="m82 56h-9.25"
+                    ></path>
+                  </g>
+                  <path
+                    opacity=".4"
+                    fill="#f85565"
+                    d="m64 84c5 0 7-3 7-3h-14s2 3 7 3z"
+                  ></path>
+                  <path
+                    fill="#f85565"
+                    d="m65.07 78.93-.55.55a.73.73 0 0 1 -1 0l-.55-.55c-1.14-1.14-2.93-.93-4.27.47l-1.7 1.6h14l-1.66-1.6c-1.34-1.4-3.13-1.61-4.27-.47z"
+                  ></path>
+                </svg>
+              </div>
+              <div class="card__title">Vikash Deep Yadav</div>
+              <div class="card__subtitle">Web Development</div>
+              <div class="card__wrapper">
+                <button class="card__btn">Follow</button>
+                <button class="card__btn card__btn-solid">read more</button>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+   </div>
+   <div class="four">
+    <div class="event-box2">
+        <div id="event-gradient"></div>
+        <div class="card-searchbar2">
+            <div class="searchBox2">
+        
+              <input class="searchInput2" type="text" name="" placeholder="Search for event">
+              <button class="searchButton2" href="#">
+                     
+                    
+        
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29" fill="none">
+        <g clip-path="url(#clip0_2_17)">
+        <g filter="url(#filter0_d_2_17)">
+        <path d="M23.7953 23.9182L19.0585 19.1814M19.0585 19.1814C19.8188 18.4211 20.4219 17.5185 20.8333 16.5251C21.2448 15.5318 21.4566 14.4671 21.4566 13.3919C21.4566 12.3167 21.2448 11.252 20.8333 10.2587C20.4219 9.2653 19.8188 8.36271 19.0585 7.60242C18.2982 6.84214 17.3956 6.23905 16.4022 5.82759C15.4089 5.41612 14.3442 5.20435 13.269 5.20435C12.1938 5.20435 11.1291 5.41612 10.1358 5.82759C9.1424 6.23905 8.23981 6.84214 7.47953 7.60242C5.94407 9.13789 5.08145 11.2204 5.08145 13.3919C5.08145 15.5634 5.94407 17.6459 7.47953 19.1814C9.01499 20.7168 11.0975 21.5794 13.269 21.5794C15.4405 21.5794 17.523 20.7168 19.0585 19.1814Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" shape-rendering="crispEdges"></path>
+        </g>
+        </g>
+        <defs>
+        <filter id="filter0_d_2_17" x="-0.418549" y="3.70435" width="29.7139" height="29.7139" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
+        <feOffset dy="4"></feOffset>
+        <feGaussianBlur stdDeviation="2"></feGaussianBlur>
+        <feComposite in2="hardAlpha" operator="out"></feComposite>
+        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"></feColorMatrix>
+        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2_17"></feBlend>
+        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2_17" result="shape"></feBlend>
+        </filter>
+        <clipPath id="clip0_2_17">
+        <rect width="28.0702" height="28.0702" fill="white" transform="translate(0.403503 0.526367)"></rect>
+        </clipPath>
+        </defs>
+        </svg>
+              </button>
+          </div>
+       
+   </div>
+<div class="five">
+    <div class="i3-banner">
+
+        <div class="i3-container">
+            <h1>Connectivity at One Place</h1>
+            <p><h2>Invite,Update,Inform alumni with single click</h2></p>
+            <button type="button" class="i3-button"><span></span><div class="i3-conatiner2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-broadcast-pin" viewBox="0 0 16 16">
+                <path d="M3.05 3.05a7 7 0 0 0 0 9.9.5.5 0 0 1-.707.707 8 8 0 0 1 0-11.314.5.5 0 0 1 .707.707m2.122 2.122a4 4 0 0 0 0 5.656.5.5 0 1 1-.708.708 5 5 0 0 1 0-7.072.5.5 0 0 1 .708.708m5.656-.708a.5.5 0 0 1 .708 0 5 5 0 0 1 0 7.072.5.5 0 1 1-.708-.708 4 4 0 0 0 0-5.656.5.5 0 0 1 0-.708m2.122-2.12a.5.5 0 0 1 .707 0 8 8 0 0 1 0 11.313.5.5 0 0 1-.707-.707 7 7 0 0 0 0-9.9.5.5 0 0 1 0-.707zM6 8a2 2 0 1 1 2.5 1.937V15.5a.5.5 0 0 1-1 0V9.937A2 2 0 0 1 6 8"/>
+              </svg></div>BROADCAST MESSAGE</button>
+        </div>
+
+        
+     <div class="i3-banner2">
+        <div class="i3-element11"><h1>Send Invites</h1></div>
+        <div class="i3-element1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="200" height="" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+              </svg>
+          </svg></div>
+
+          <div class="i3-element22"><h1>Send Updates</h1></div>
+          <div class="i3-element2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="200" height="" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"/>
+                <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"/>
+              </svg>
+          </div>
+
+
+          <div class="i3-element33"><h1>Send Newsletters</h1></div>
+          <div class="i3-element3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="200" height="" fill="currentColor" class="bi bi-file-text" viewBox="0 0 16 16">
+                <path d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5M5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1z"/>
+                <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1"/>
+              </svg>
+          </div>
+     </div>
+</div>
+</div>
+<div class="six">
+
+</div>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  body{
+    background-image: url("../static/WhatsApp\ Image\ 2024-04-16\ at\ 10.35.35\ PM.jpeg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+  }
+  form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: auto;
+  position: relative;
+  top: 50px;
+}
+.i4-box{
+  width: 800px;
+  background-color: antiquewhite;
+  height: 700px;
+  position: relative;
+  left: 300px;
+  top:-10px;
+  border-radius: 50px;
+  /* border: 2px solid #1e809f; */
+}
+
+label {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+input {
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 0 5px gray;
+}
+
+.i4{
+  background-color: #1e809f;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  position: relative;
+  top: -210px;
+  border-radius: 50px;
+}
+
+input[type="file"] {
+  margin-bottom: 20px;
+}
+
+#i4-name{
+  position: relative;
+  left: -200px;
+  top: 20px;
+}
+.i4-name{
+  position: relative;
+  left: -200px;
+  top: 20px;
+
+}
+#i4-email{
+  position: relative;
+  left: 200px;
+  top: -50px;
+}
+.i4-email{
+  position: relative;
+  left: 200px;
+  top: -50px;
+}
+#i4-password{
+  position: relative;
+  left: -200px;
+  top: -50px;
+}
+.i4-password{
+  position: relative;
+  left: -200px;
+  top: -50px;
+}
+#i4-confirm-password{
+  position: relative;
+  left: 200px;
+  top: -120px;
+}
+.i4-cpass{
+  position: relative;
+  left: 200px;
+  top: -120px;
+}
+#i4-branch{
+  position: relative;
+  left: -200px;
+  top: -110px;
+}
+.i4-branch{
+  position: relative;
+  left: -200px;
+  top: -110px; 
+}
+#i4-company{
+  position: relative;
+  left: -200px;
+  top: -90px;
+}
+.i4-company{
+  position: relative;
+  left: -200px;
+  top: -90px;  
+}
+#i4-position{
+  position: relative;
+  left: 200px;
+  top: -160px;  
+}
+.i4-position{
+  position: relative;
+  left: 200px;
+  top: -160px;  
+}
+#i4-firm-image{
+  position: relative;
+  top: -220px;
+  background-color: white;
+}
+.i4-image{
+  position: relative;
+  top: -220px; 
+}
+h1{
+  position: relative;
+  left: 300px;
+  top: 50px;
+}
+#i4-status{
+  position: relative;
+  top: -300px;
+  left: 200px;
+}
+.i4-status{
+  position: relative;
+  top: -300px;
+  left: 200px;
+}
+h1{
+  font-size: 50px;
+  color: #5c8f9d;
+}
+p{
+  color: rgb(0, 0, 0);
+  position: relative;
+  top: -110px;
+  left: 580px;
+}
+a{
+  color: #5c8f9d;
+}
+</style>
+<body>
+  <div class="i4-box">
+    <h1>SIGN UP</h1>
+    <form action="{{url_for('done')}}" method="post">
+        <label for="name" class="i4-name">First Name:</label>
+        <input type="text" id="i4-name" name="firstname" required>
+      
+        <label for="email" class="i4-email">Last Name:</label>
+        <input type="text" id="i4-email" name="lastname" required>
+      
+        <label for="password" class="i4-password">Email:</label>
+        <input type="email" id="i4-password" name="email" required>
+      
+        <label for="confirm-password" class="i4-cpass">Password:</label>
+        <input type="password" id="i4-confirm-password" name="password" required>
+
+        <label for="branch" class="i4-branch">Branch:</label>
+        <!-- <input type="branch" id="branch" name="branch" required> -->
+        <select name="branch" id="i4-branch">
+          <option value="CSE">CSE</option>
+          <option value="DSA AI">DSA AI</option>
+          <option value="ECE">ECE</option>
+          <option value="ES IOT">ES IOT</option>
+        </select>
+
+        <label for="company" class="i4-company">Company Name:</label>
+        <input type="company" id="i4-company" name="company" required>
+
+
+        <label for="position" class="i4-position">Current Position:</label>
+        <input type="position" id="i4-position" name="position" required>
+
+        <label for="position" class="i4-status">Confirm Password:</label>
+        <input type="password" id="i4-status" name="conpassword" required>
+      
+        <label for="firm-image" class="i4-image">Upload Your Image</label>
+        <input type="file" id="i4-firm-image" name="pic" accept="image/*">
+      
+        <input type="submit" value="SIGN UP" class="i4">
+      </form>
+    </div>
+    <p>Already have an account? <a href="./index.html">Log in</a></p>
+    <p>Copyright © SMHACKERS.com</p>
+      <script>
+        const inputImage = document.getElementById("i4-firm-image");
+
+inputImage.addEventListener("change", function(e) {
+  const file = e.target.files[0];
+  const reader = new FileReader();
+
+  reader.onload = function() {
+    const img = new Image();
+    img.src = reader.result;
+    document.body.appendChild(img);
+  };
+
+  reader.readAsDataURL(file);
+});
+      </script>
+</body>
+</html>
