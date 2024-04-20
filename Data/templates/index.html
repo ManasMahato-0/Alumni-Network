@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/footerstyle.css">
 </head>
 <body>
    <div class="home">
@@ -16,6 +17,7 @@
           <a href="#second" class="mid">ABOUT US</a>
           <a href="#about" class="mid">TOOLS</a>
           <a href="{{url_for('connect')}}" class="end">CONNECT</a>
+
           {%if var==False%}
           <a href="{{url_for('login')}}" class="end start">LOG IN</a>
           {%else %}
@@ -25,7 +27,7 @@
             <i class="fa fa-bars"></i>
           </a>
         </div> 
-        <div class="content">
+        <div class="content" id="home">
            <h1>IIIT RANCHI</h1>
            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus nisi impedit hic praesentium iusto ipsam ut optio, beatae eligendi nihil ab eos? Maiores, quas enim! Dicta autem aspernatur perferendis rem eligendi nesciunt eos inventore. Voluptatem aspernatur fugit alias molestias laborum.</p>
          </div>
@@ -69,7 +71,7 @@
         <div class="about-img">
           <img src="../static/Image1.jpg" alt="">
         </div>
-        <div class="about-about">
+        <div class="about-about" id="about">
           <h2>ABOUT US</h2>
           <h3>All Business Regarding Alumni at one Place..</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda ipsum provident repellat rem natus illum maiores. Ea fugiat iusto magnam corporis et quod adipisci nisi ullam ipsum sed modi, ratione non suscipit libero eaque perspiciatis commodi necessitatibus rem? Quis modi nisi, quam pariatur sunt beatae aliquid possimus suscipit ea laudantium?</p>
@@ -84,11 +86,10 @@
    </div>
 {%if var==True%}
    <form action="{{url_for('search')}}" method="post">
-   <div class="third">
+   <div class="third" id="tools">
     <div class="card-main">
         <div class="card-searchbar">
           <div class="searchBox">
-      
             <input class="searchInput" type="text" name="searchuser" placeholder="Search something">
             <button class="searchButton" type="submit">
                  
@@ -119,8 +120,6 @@
                      
       
             </button>
-        </div>
-      
         </div>
       </form>
         <div class="card-top-alumni">
@@ -1157,7 +1156,6 @@
 </div>
 </div>
 <div class="six">
-
 </div>
 <script>
   document.addEventListener('scroll',()=>{
