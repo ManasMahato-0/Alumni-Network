@@ -14,18 +14,22 @@
     html{
         scroll-behavior: smooth;
     }
+    body{
+      background-color: #717d8d;
+    }
     .home{
         width: 100%;
         height: 100vh;
-        background-image: url(../static/image.jpg);
+        background:linear-gradient(to bottom, rgba(0,0,0,0),rgba(0,0,0,0.7)), url(../static/image.jpg);
         background-repeat: no-repeat;
         background-size: cover;
         
     }
+    
     .topnav{
     overflow: hidden;
           background-color: transparent;
-          height: 70px;
+          height: 80px;
         }
         
         .topnav a {
@@ -51,6 +55,14 @@
         .topnav .icon {
           display: none;
         }
+        .scrolled{
+        width:100%;
+        background-color:#7cb4b6;
+        position:fixed;
+        top:0;
+        left:0;
+        z-index:1000;
+      }
         
         @media screen and (max-width: 600px) {
           .topnav a:not(:first-child) {display: none;}
@@ -246,18 +258,6 @@
   margin-top: 0px;
 }
 
-button:hover {
-  color: #fff;
-  background-color: #1A1A1A;
-  box-shadow: rgba(0, 0, 0, 0.5) 0 10px 20px;
-  transform: translateY(-3px);
-}
-
-button:active {
-  box-shadow: none;
-  transform: translateY(0);
-}
-
 .searchInput {
   border: none;
   background: none;
@@ -387,7 +387,7 @@ button:active {
 }
 .searchBox2 {
   display: flex;
-  max-width: 600px;
+  width: 600px;
   align-items: center;
   justify-content: space-between;
   gap: 8px;
@@ -412,17 +412,7 @@ button:active {
   margin-top: 0px;
 }
 
-button:hover {
-  color: #fff;
-  background-color: #1A1A1A;
-  box-shadow: rgba(0, 0, 0, 0.5) 0 10px 20px;
-  transform: translateY(-3px);
-}
 
-button:active {
-  box-shadow: none;
-  transform: translateY(0);
-}
 
 .searchInput2 {
   border: none;
@@ -438,7 +428,7 @@ button:active {
     height: 100vh;
     background-color: #000;
     position: relative;
-    top: 700px;
+    top: 40px;
 }
 .i3-banner2{
     height: 400px;
@@ -634,6 +624,157 @@ h2::after{
 }
 h2:hover::after{
   width: 30%;
+}
+
+.event-box{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: start;
+  gap: 10px;
+  padding: 15px;
+  color: #f7eedd;
+}
+.upcoming-event{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+  align-items: start;
+  margin-top: 20px;
+  padding: 30px;
+  background-color: #717d8d;
+}
+.event{
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px;
+}
+.event img{
+  height: 200px;
+  width: 150px;
+  padding-right:30px;
+}
+.event-info{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: "Atkinson Hyperlegible", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.event-info h3{
+  margin-bottom: 10px;
+}
+.event-info button{
+  width: 180px;
+  height: 36px;
+  border-radius: 20px;
+}
+.event-info img{
+  width: 20px;
+  height: 20px;
+}
+.event-button{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 400px;
+  height: 36px;
+  padding-top: 20px;
+}
+
+.evbtn-1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  background-color:#b4dbdc ;
+}
+.evbtn-1 img{
+  padding: 0;
+}
+hr{
+  margin-left: 180px;
+  margin-top: 20px;
+  border: 3px solid #1e4f51;
+  width: 100%;
+}
+.event-register button{
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  align-items: center;
+  background-color: transparent;
+  color: #b4dbdc;
+  width: 400px;
+  border: none;
+  
+}
+.event-register span{
+  font-family: "Atkinson Hyperlegible", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  background-color: transparent;
+  font-style: normal;
+}
+.event-register img{
+  width: 30px;
+  height: 30px;
+  padding: 0;
+}
+.See-more{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.See-more button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  color: #f7f7f7;
+  gap: 5px;
+  border: none;
+  
+}
+.See-more span{
+  font-family: "Atkinson Hyperlegible", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  background-color: transparent;
+  font-style: normal;
+}
+.See-more img{
+  width: 30px;
+  height: 30px;
+  padding: 0;
+}
+.four2{
+  width: 100%;
+  background-color: #717d8d;
+  margin-bottom: 0px;
+}
+.past-event{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+  align-items: start;
+  margin-top: 20px;
+  padding: 30px;
+  color: #f7eedd;
+  background-color: #717d8d;
+}
+.evbtn-12{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  background-color: #c47794; ;
 }
 </style>
 <body>
@@ -1610,9 +1751,9 @@ h2:hover::after{
       </div>
    </div>
    <div class="four">
-    <div class="event-box2">
-        <div id="event-gradient"></div>
-        <div class="card-searchbar2">
+    <div class="event-box">
+        
+      <div class="card-searchbar2">
             <div class="searchBox2">
         
               <input class="searchInput2" type="text" name="" placeholder="Search for event">
@@ -1620,7 +1761,7 @@ h2:hover::after{
                      
                     
         
-                                  <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29" fill="none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29" fill="none">
         <g clip-path="url(#clip0_2_17)">
         <g filter="url(#filter0_d_2_17)">
         <path d="M23.7953 23.9182L19.0585 19.1814M19.0585 19.1814C19.8188 18.4211 20.4219 17.5185 20.8333 16.5251C21.2448 15.5318 21.4566 14.4671 21.4566 13.3919C21.4566 12.3167 21.2448 11.252 20.8333 10.2587C20.4219 9.2653 19.8188 8.36271 19.0585 7.60242C18.2982 6.84214 17.3956 6.23905 16.4022 5.82759C15.4089 5.41612 14.3442 5.20435 13.269 5.20435C12.1938 5.20435 11.1291 5.41612 10.1358 5.82759C9.1424 6.23905 8.23981 6.84214 7.47953 7.60242C5.94407 9.13789 5.08145 11.2204 5.08145 13.3919C5.08145 15.5634 5.94407 17.6459 7.47953 19.1814C9.01499 20.7168 11.0975 21.5794 13.269 21.5794C15.4405 21.5794 17.523 20.7168 19.0585 19.1814Z" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" shape-rendering="crispEdges"></path>
@@ -1645,7 +1786,106 @@ h2:hover::after{
               </button>
           </div>
        
-   </div>
+      </div>
+      <div class="upcoming-event">
+        <h1>Upcoming Events</h1>
+        <div class="event1 event">
+          <img src="../static/logo/preview-page0.jpg" alt="">
+          <div class="event-info">
+            <h3>Event Name</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima voluptatem quis eos veritatis natus quia et nisi ducimus vel enim!</p>
+            <p>27th April 2024,Saturday</p>
+            <p>7:00 PM - 9:30 PM IST</p>
+            <div class="event-button">
+              <button class="evbtn-1"><img src="../static/logo/icons8-bell-24.png" alt=""> <span>Set Remainder</span></button>
+              <button class="evbtn-2">Learn More</button>
+            </div>
+
+          </div>
+          <div class="event-register">
+            <button><img src="../static/logo/icons8-register-50-removebg-preview.png" alt=""><span>Register</span></button>
+          </div>
+          
+        </div>
+        <hr>
+        <div class="event2 event">
+          <div class="event1 event">
+            <img src="../static/logo/preview-abstract-corporate-live-webinar-poster-vector-template-1645627668.jpg" alt="">
+            <div class="event-info">
+              <h3>Event Name</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima voluptatem quis eos veritatis natus quia et nisi ducimus vel enim!</p>
+              <p>27th April 2024,Saturday</p>
+              <p>7:00 PM - 9:30 PM IST</p>
+              <div class="event-button">
+                <button class="evbtn-1"><img src="../static/logo/icons8-bell-24.png" alt=""> <span>Set Remainder</span></button>
+                <button class="evbtn-2">Learn More</button>
+              </div>
+  
+            </div>
+            <div class="event-register">
+              <button><img src="../static/logo/icons8-register-50-removebg-preview.png" alt=""><span>Register</span></button>
+            </div>
+            
+            
+          </div>
+        </div>
+        <hr>
+      </div>
+      <div class="See-more">
+        <button><span>See More</span><img src="../static/logo/icons8-down-50.png" alt=""></button>
+      </div>
+    </div>
+  </div>
+  <div class="four2">
+    
+<div class="past-event">
+  <h1>Past Events</h1>
+  <div class="event1 event">
+    <img src="../static/logo/preview-page0.jpg" alt="">
+    <div class="event-info">
+      <h3>Event Name</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima voluptatem quis eos veritatis natus quia et nisi ducimus vel enim!</p>
+      <p>27th April 2024,Saturday</p>
+      <p>7:00 PM - 9:30 PM IST</p>
+      <div class="event-button">
+        <button class="evbtn-12"><img src="../static/logo/icons8-image-64.png" alt=""> <span>Set Remainder</span></button>
+        <button class="evbtn-2">Learn More</button>
+      </div>
+
+    </div>
+    <div class="event-register">
+      <button><img src="../static/logo/icons8-register-50-removebg-preview.png" alt=""><span>Register</span></button>
+    </div>
+    
+  </div>
+  <hr>
+  <div class="event2 event">
+    <div class="event1 event">
+      <img src="../static/logo/preview-abstract-corporate-live-webinar-poster-vector-template-1645627668.jpg" alt="">
+      <div class="event-info">
+        <h3>Event Name</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima voluptatem quis eos veritatis natus quia et nisi ducimus vel enim!</p>
+        <p>27th April 2024,Saturday</p>
+        <p>7:00 PM - 9:30 PM IST</p>
+        <div class="event-button">
+          <button class="evbtn-12"><img src="../static/logo/icons8-image-64.png" alt=""> <span>Set Remainder</span></button>
+          <button class="evbtn-2">Learn More</button>
+        </div>
+
+      </div>
+      <div class="event-register">
+        <button><img src="../static/logo/icons8-register-50-removebg-preview.png" alt=""><span>Register</span></button>
+      </div>
+      
+      
+    </div>
+  </div>
+  <hr>
+</div>
+<div class="See-more">
+  <button><span>See More</span><img src="../static/logo/icons8-down-50.png" alt=""></button>
+</div>
+  </div>
 <div class="five">
     <div class="u-banner">
         <div class="u-navbar1">
@@ -1691,5 +1931,18 @@ h2:hover::after{
 </div> 
 <div class="six">
 </div>
+<script>
+  document.addEventListener('scroll',()=>{
+  const nav = document.querySelector('.topnav');
+  if (window.scrollY> 82){
+    nav.classList.add('scrolled');
+
+  }
+  else{
+    nav.classList.remove('scrolled');
+  }
+  });
+</script>
+{%endif%}
 </body>
 </html>
