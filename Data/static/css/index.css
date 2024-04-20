@@ -766,3 +766,11 @@ hr{
   color: #f7eedd;
   background-color: #717d8d;
 }
+.evbtn-12{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  background-color: #c47794; ;
+}
