@@ -111,6 +111,24 @@ def loggedin():
 def about():
     return render_template('about.html')
 @app.route('/searchuser',methods=['GET','POST'])
+def searchuser():
+    user_id = request.form['searchuser'].lower().strip()
+
+    # Retrieve users with matching first name (case-insensitive)
+    global matching_users
+    matching_users=[]
+    if request.form["filter"]=='Name':
+        users = User.query.filter(func.lower(User.First_Name) == user_id).all()
+    elif request.form["filter"]=='Company':
+        users = User.query.filter(func.lower(User.Current_Company) == user_id).all()
+    for user in users:
+        matching_users.append(user.to_dict())
+
+    if matching_users:
+        return render_template('namecard.html',users=matching_users,var=True,name=user_id)
+    else:
+        return render_template('namecard.html',var=False,name=user_id)
+@app.route('/searchuserbrother',methods=['GET','POST'])
 def search():
     user_id = request.form['searchuser'].lower().strip()
 

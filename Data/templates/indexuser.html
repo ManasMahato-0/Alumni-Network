@@ -850,13 +850,14 @@ hr{
     
       </div>
    </div>
+   <form action="{{url_for('search')}}" method="post">
    <div class="third" id="tools">
     <div class="card-main">
         <div class="card-searchbar">
           <div class="searchBox">
       
-            <input class="searchInput" type="text" name="" placeholder="Search something">
-            <button class="searchButton" href="#">
+            <input class="searchInput" type="text" name="searchuser" placeholder="Search something">
+            <button class="searchButton">
                    
                   
       
@@ -890,6 +891,7 @@ hr{
       
         
         </div>
+      </form>
         <div class="card-top-alumni">
           <div class="card1">
             <div class="card">
@@ -1943,6 +1945,5 @@ hr{
   }
   });
 </script>
-{%endif%}
 </body>
 </html>

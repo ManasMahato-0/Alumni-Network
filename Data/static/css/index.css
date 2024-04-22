@@ -5,6 +5,7 @@
     body{
       background-color: #717d8d;
       width: 100%;
+      overflow-x: hidden;
     }
     html{
         scroll-behavior: smooth;
